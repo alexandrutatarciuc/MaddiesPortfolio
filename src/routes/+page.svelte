@@ -1,11 +1,13 @@
 <script lang="ts">
 	import ProjectCard from './ProjectCard.svelte';
+	import Nav from '$lib/Nav.svelte';
 </script>
 
 <svelte:head>
 	<title>Home</title>
 </svelte:head>
 
+<Nav />
 <section class="flex items-center justify-center w-full min-h-screen px-6 py-24 overflow-hidden bg-white sm:px-8 md:px-15 lg:px-auto">
 	<div class="relative text-display border-2 border-gray-900 rounded-2xl mx-auto px-4 sm:px-8 md:px-10 lg:px-15 py-12 sm:py-19 flex flex-col gap-10 max-w-[70rem] hi-section">
 		<h1 class="font-display text-center font-semibold text-3xl sm:text-5xl md:text-6xl lg:text-[5.25rem] lg:leading-none xl:text-8xl">
@@ -73,9 +75,9 @@
 <section class="bg-white px-4 sm:px-8 md:px-12 lg:px-16 xl:px-[6.25rem] py-20 md:py-36">
 	<h2 class="font-display text-4xl sm:text-6xl xl:text-[5.25rem] text-gray-900 mb-10 text-center font-semibold">Projects</h2>
 	<div class="flex flex-col gap-16">
-		<ProjectCard imgUrl="/projects/c-cube/c-cube-project-cover-preview.png" title="C-Cube" tags="UX/UI | Branding | Web Development" />
-		<ProjectCard imgUrl="/projects/audiophile/audiophile-project-cover-preview.png" title="Audiophile App" tags="Concept Development | UX | App Design" />
-		<ProjectCard imgUrl="/projects/my-coffee-impact/my-coffee-impact-project-cover-preview.png" title="My Coffee Impact Platform" tags="Gamification | Website Design" />
+		<ProjectCard imgUrl="/projects/c-cube/c-cube-project-cover-preview.png" projectUrl="c-cube" title="C-Cube" tags="UX/UI | Branding | Web Development" />
+		<ProjectCard imgUrl="/projects/audiophile/audiophile-project-cover-preview.png" projectUrl="audiophile" title="Audiophile App" tags="Concept Development | UX | App Design" />
+		<ProjectCard imgUrl="/projects/my-coffee-impact/my-coffee-impact-project-cover-preview.png" projectUrl="coffee-impact" title="My Coffee Impact Platform" tags="Gamification | Website Design" />
 	</div>
 </section>
 
