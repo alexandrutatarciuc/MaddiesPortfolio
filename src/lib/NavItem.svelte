@@ -8,6 +8,4 @@
   </script>
   
   <a class:bg-primary={isActive} class="z-20 py-4 px-6 font-display text-sm lg:text-xl font-medium whitespace-nowrap rounded-full text-center min-w-0 sm:min-w-[6rem] lg:min-w-[8rem]" {href}>{label}</a>
-  <style>
-  </style>
   
