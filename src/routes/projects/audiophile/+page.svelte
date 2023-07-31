@@ -69,12 +69,13 @@
 
 <div class="flex flex-col bg-white font-fig tree">
 	<img src="audiophile/audiophile-project-cover.png" class="min-h-[40rem] object-cover" alt="Audiophile Project Cover" />
-	<div class="flex flex-col items-center justify-center px-4 py-20 gap-2 font-semibold text-center text-gray-900 bg-white font-display">
+	<div
+		class="flex flex-col items-center justify-center px-4 py-20 md:py-[7.5rem] md:px-12 lg:py-36 lg:px-20 xl:px-[6.25rem] gap-2 font-semibold text-center text-gray-900 bg-white font-display">
 		<h1 class="font-display text-5xl font-bold sm:text-[5.25rem] md:text-8xl">Audiophile App</h1>
 		<p class="text-4xl md:text-6xl font-medium">Tapping into the HiFi purchase dilemmas.</p>
 	</div>
 	<section class="flex flex-col gap-10 px-6 sm:px-16 md:px-20 lg:px-[6.25rem] py-16 text-xl font-medium text-white bg-gray-900">
-		<div class="grid grid-flow-row grid-cols-2 gap-16 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7">
+		<div class="grid grid-flow-row grid-cols-2 gap-16 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7">
 			<div class="flex flex-col gap-4">
 				<p class="font-bold">Client</p>
 				<p>Audiophile.dk</p>
@@ -94,7 +95,7 @@
 		</div>
 		<div class="flex flex-col gap-4">
 			<p class="font-bold">Background</p>
-			<p class="lg:mr-48">
+			<p class="lg:mr-48 xl:mr-96">
 				Audiophile.dk is a hi-fi audio shop that has been dealing with low conversion rates and dropping financial metrics. The goal was to dive into
 				user pains and come up with an innovative digital concept that would help convert more customers. The team consisted of two people.
 			</p>
@@ -102,7 +103,7 @@
 		<button class="py-6 px-8 bg-primary text-gray-900 font-bold self-start">See prototype</button>
 	</section>
 	<section class="pt-20">
-		<div class="px-6 flex flex-col gap-4 justify-center items-center text-xl text-center">
+		<div class="px-6 sm:px-16 md:px-20 lg:px-[6.25rem] xl:px-[12.5rem] flex flex-col gap-4 justify-center items-center text-xl text-center">
 			<Header>Brief summary.</Header>
 			<TextBlock header="Audio-what?" isCentered>
 				Have you ever felt stuck when deciding on what tech product to choose? It's like entering a treacherous labyrinth filled with an abundance of
@@ -137,10 +138,17 @@
 			</div>
 		</div>
 	</section>
-	<section class="pt-20 flex flex-col gap-10 px-6 sm:px-16 md:px-20 lg:px-[6.25rem]">
+	<section class="pt-20 md:pt-[7.5rem] xl:pt-36 flex flex-col gap-10 px-6 sm:px-16 md:px-20 lg:px-[6.25rem]">
 		<Header>Walkthrough.</Header>
-		<div class="flex flex-col gap-6">
-			<div class="flex flex-col justify-center items-center">
+		<div class="flex flex-col lg:flex-row gap-6 lg:justify-between lg:items-center lg:gap-[6.25rem]">
+			<div class="max-w-[37.5rem] xl:max-w-[70rem]">
+				<BigStar class="mb-6" />
+				<TextBlock header="Scan room effortlessly">
+					To provide accurate advice on optimizing sound and determining the ideal placement for audio products, precise measurements are crucial.
+					With the AR scan room feature, users have the convenience of registering a 2D room plan effortlessly.
+				</TextBlock>
+			</div>
+			<div class="flex flex-col justify-center items-center lg:shrink-0">
 				<!-- svelte-ignore a11y-media-has-caption -->
 				<video
 					use:videoPlayer
@@ -149,44 +157,45 @@
 					on:inview_leave={handleLeave}
 					src="audiophile/audiophile-project-video-showcase-1.mov"
 					class="max-h-[40rem] project-video"
-					loop muted playsinline />
+					loop
+					muted
+					playsinline />
 			</div>
-			<BigStar class="mb-6" />
-			<TextBlock header="Scan room effortlessly">
-				To provide accurate advice on optimizing sound and determining the ideal placement for audio products, precise measurements are crucial. With
-				the AR scan room feature, users have the convenience of registering a 2D room plan effortlessly.
-			</TextBlock>
 		</div>
-		<div class="flex flex-col gap-6">
-			<div class="flex flex-col justify-center items-center">
-				<img src="audiophile/audiophile-project-walkthrough-2.png" class="object-fit" alt="Audiophile app new room screen" />
-				<img src="audiophile/audiophile-project-walkthrough-3.png" class="object-fit" alt="Audiophile app new room settings screen" />
+		<div class="flex flex-col xl:flex-row-reverse xl:justify-between gap-6 xl:items-center xl:gap-[6.25rem]">
+			<div class="max-w-[37.5rem] xl:max-w-[70rem]">
+				<NinjaStar class="mb-6" />
+				<TextBlock header="Add audio gear & generate report">
+					The user can choose the audio products they want to add, drag them in the desired position, and generate a diagnostics report that will tell
+					them whether the position they chose is good and whether the audio product matches room layout & size.
+				</TextBlock>
 			</div>
-			<NinjaStar class="mb-6" />
-			<TextBlock header="Add audio gear & generate report">
-				The user can choose the audio products they want to add, drag them in the desired position, and generate a diagnostics report that will tell
-				them whether the position they chose is good and whether the audio product matches room layout & size.
-			</TextBlock>
+			<div class="flex flex-col lg:flex-row justify-center items-center lg:shrink-0">
+				<img src="audiophile/audiophile-project-walkthrough-2.png" class="object-fit lg:inline" alt="Audiophile app new room screen" />
+				<img src="audiophile/audiophile-project-walkthrough-3.png" class="object-fit lg:inline" alt="Audiophile app new room settings screen" />
+			</div>
 		</div>
 
-		<div class="flex flex-col gap-6">
-			<div class="flex flex-col justify-center items-center">
+		<div class="flex flex-col lg:flex-row gap-6 lg:justify-between lg:items-center lg:gap-[6.25rem]">
+			<div class="max-w-[37.5rem] xl:max-w-[70rem]">
+				<SmallStar class="mb-6" />
+				<TextBlock header="See the HiFi product in AR mode">
+					Welcome to our augmented reality (AR) mode for viewing high-fidelity (hifi) products in your room! With this innovative feature, you can now
+					experience an immersive and realistic way to visualize how various hifi products would look and fit in your living space before making a
+					purchase decision.
+				</TextBlock>
+			</div>
+			<div class="flex flex-col justify-center items-center lg:shrink-0">
 				<img src="audiophile/audiophile-project-walkthrough-4.png" class="object-fit" alt="Audiophile app new room screen" />
 			</div>
-			<SmallStar class="mb-6" />
-			<TextBlock header="See the HiFi product in AR mode">
-				Welcome to our augmented reality (AR) mode for viewing high-fidelity (hifi) products in your room! With this innovative feature, you can now
-				experience an immersive and realistic way to visualize how various hifi products would look and fit in your living space before making a
-				purchase decision.
-			</TextBlock>
 		</div>
 	</section>
-	<section class="py-20 px-6 sm:px-16 md:px-20 lg:px-[6.25rem]">
+	<section class="py-20 md:pt-[7.5rem] xl:pt-36 px-6 sm:px-16 md:px-20 lg:px-[6.25rem]">
 		<div class="mb-20">
 			<Header>Now to the details...</Header>
 		</div>
-		<div class="flex flex-col justify-center items-center">
-			<TextBlock header="Finding the problem">
+		<div class="flex flex-col lg:flex-row lg:justify-between justify-center items-center">
+			<TextBlock header="Finding the problem" classes="lg:max-w-[70rem]">
 				Before working on this project, I have never even heard of the term “audiophile”. So I had a lot of catching up to do - to understand who are
 				these people we are working for and what makes them suffer. It was completely new territory so we first wanted to jet down all our biases in
 				relation to audiophiles and do research to confirm or disapprove our initial hypotheses.
@@ -196,58 +205,60 @@
 				everywhere for new relevant information.
 			</TextBlock>
 			<div class="py-10 px-20">
-				<QuestionMark />
+				<QuestionMark height="" width="" class="w-[10rem] md:w-[12.5rem] xl:w-[17rem]" viewBox="0 0 160 184" />
 			</div>
 		</div>
 	</section>
-	<section class="bg-gray-900 text-white px-5 py-16 flex flex-col gap-16">
+	<section class="bg-gray-900 text-white px-6 sm:px-16 md:px-20 lg:px-[6.25rem] py-16 flex flex-col gap-16">
 		<TextBlock header="Valid data above all">
 			Traditionally, we focused our research on two topics: User Research and Business Research. I dived deep into user research by following a couple
 			of methodologies: netnography, ethnography, qualitative and quantitative data collection. I wanted to obtain valid data and triangulate it. Here
 			are some key insights I found about the users and competitors:
 		</TextBlock>
 		<div class="flex flex-col gap-16 lg:flex-row lg:gap-0">
-			<Table tableHeader="User Insights" rows={userInsightsRows} iconType={NinjaStar} borderColor="lg:border-r-0" />
-			<Table tableHeader="Business Insights" rows={businessInsightsRows} iconType={NinjaStar} />
+			<Table tableHeader="User Insights" rows={userInsightsRows} iconType={NinjaStar} classes="lg:border-r-0 flex-1" />
+			<Table tableHeader="Business Insights" rows={businessInsightsRows} iconType={NinjaStar} classes="flex-1" />
 		</div>
 	</section>
 	<section class="px-6 sm:px-16 md:px-20 lg:px-[6.25rem] py-16 flex flex-col items-center">
-		<TextBlock header="Quantitative Analysis">
-			After gathering some superficial knowledge from some personal interviews and preliminary research, I and my colleague were more confident in our
-			impression of audiophiles and what to ask in a survey. When creating the survey, I tried to be aware of all my biases that still might have not
-			fully disappeared. I tried to ask questions that would give valuable answers to our research and concept development process. Reddit was a huge
-			help for us, as it had several audiophile communities that were open to answer to our questions. Ladies and gentlemen, the results that helped
-			us find our final problem statement:
-		</TextBlock>
-		<div class="py-10 px-20 mt-4 mb-10">
-			<Diagram />
+		<div class="text-block-icon md:mb-20">
+			<TextBlock header="Quantitative Analysis">
+				After gathering some superficial knowledge from some personal interviews and preliminary research, I and my colleague were more confident in
+				our impression of audiophiles and what to ask in a survey. When creating the survey, I tried to be aware of all my biases that still might
+				have not fully disappeared. I tried to ask questions that would give valuable answers to our research and concept development process. Reddit
+				was a huge help for us, as it had several audiophile communities that were open to answer to our questions. Ladies and gentlemen, the results
+				that helped us find our final problem statement:
+			</TextBlock>
+			<div class="py-10 px-20 mt-4 mb-10 md:mb-0 md:mt-0 md:py-0 md:px-0">
+				<Diagram height="" width="" class="w-[10rem] md:w-[13.75rem] xl:w-[16.5rem]" viewBox="0 0 162 183" />
+			</div>
 		</div>
-		<div class="grid grid-cols-1 md:grid-cols-2 border-2 border-gray-900 font-display text-xl mb-16">
-			<div class="py-10 px-8 border-b-2 md:border-r-2 border-inherit flex flex-col items-center gap-4">
+		<div class="grid w-full grid-cols-1 md:grid-cols-2 border-2 border-gray-900 font-display text-xl md:text-2xl mb-16">
+			<div class="py-10 px-8 border-b-2 md:border-r-2 border-inherit flex flex-col items-center justify-center gap-4">
 				<NinjaStar width="2rem" height="2rem" viewBox="0 0 64 64" />
-				<p class="text-center"><strong>54%</strong> last bought a HiFi product a couple of months ago</p>
+				<p class="text-center max-w-xs"><strong>54%</strong> last bought a HiFi product a couple of months ago</p>
 			</div>
-			<div class="py-10 px-8 border-b-2 border-inherit flex flex-col items-center gap-4">
+			<div class="py-10 px-8 border-b-2 border-inherit flex flex-col items-center justify-center gap-4">
 				<SmallStar width="2rem" height="2rem" viewBox="0 0 64 64" />
-				<p class="text-center"><strong>72%</strong> purchased the HiFi item online</p>
+				<p class="text-center max-w-xs"><strong>72%</strong> purchased the HiFi item online</p>
 			</div>
-			<div class="py-10 px-8 border-b-2 md:border-r-2 border-inherit flex flex-col items-center gap-4">
+			<div class="py-10 px-8 border-b-2 md:border-r-2 border-inherit flex flex-col items-center justify-center gap-4">
 				<BigStar width="2rem" height="2rem" viewBox="0 0 64 64" />
-				<p class="text-center"><strong>40%</strong> rated the complexity of purchasing and researching audio-gear with a 4 (1 - easy)</p>
+				<p class="text-center max-w-xs"><strong>40%</strong> rated the complexity of purchasing and researching audio-gear with a 4 (1 - easy)</p>
 			</div>
-			<div class="py-10 px-8 border-b-2 border-inherit flex flex-col items-center gap-4">
+			<div class="py-10 px-8 border-b-2 border-inherit flex flex-col items-center justify-center gap-4">
 				<NinjaStar width="2rem" height="2rem" viewBox="0 0 64 64" />
-				<p class="text-center"><strong>74%</strong> did not audition the product when purchasing it</p>
+				<p class="text-center max-w-xs"><strong>74%</strong> did not audition the product when purchasing it</p>
 			</div>
 
-			<div class="py-10 px-8 border-b-2 md:border-b-0 md:border-r-2 border-inherit flex flex-col items-center gap-4">
+			<div class="py-10 px-8 border-b-2 md:border-b-0 md:border-r-2 border-inherit flex flex-col items-center justify-center gap-4">
 				<NinjaStar width="2rem" height="2rem" viewBox="0 0 64 64" />
-				<p class="text-center"><strong>47%</strong> said the problem they encountered was conflicting information and product reviews</p>
+				<p class="text-center max-w-xs"><strong>47%</strong> said the problem they encountered was conflicting information and product reviews</p>
 			</div>
 
-			<div class="py-10 px-8 border-inherit flex flex-col items-center gap-4">
+			<div class="py-10 px-8 border-inherit flex flex-col items-center justify-center gap-4">
 				<BigStar width="2rem" height="2rem" viewBox="0 0 64 64" />
-				<p class="text-center">
+				<p class="text-center max-w-xs">
 					<strong>36%</strong> said the problem they encountered was the lack of relevant information and difficulty of finding it
 				</p>
 			</div>
@@ -257,19 +268,22 @@
 				The survey results confirmed our hypothesis and pointed in the direction of information overwhelm during the purchasing process. In short,
 				users need clear, simple answers to their complicated questions.
 			</TextBlock>
-			<Puzzle class="min-w-[17.5rem]" />
+			<Puzzle height="" width="" class="shrink-0 w-[17.5rem] md:w-[22.5rem] xl:w-[30rem]" viewBox="0 0 280 150" />
 		</div>
 		<div
-			class="flex justify-center items-center mb-20 text-center font-medium font-display text-3xl sm:text-4xl md:text-5xl border-2 border-gray-900 bg-secondary text-gray-900 py-20 px-6">
+			class="w-full flex justify-center items-center mb-20 text-center font-medium font-display text-3xl sm:text-4xl md:text-5xl
+					border-2 border-gray-900 bg-secondary text-gray-900 py-20 px-6 md:px-20 lg:py-[7.75rem]">
 			<p>... how might we ease the research and buying process of audio gear?</p>
 		</div>
-		<TextBlock header="The two different personas">
-			During my thorough netnography research I spotted two distinct types of users. And to not take too much of your time I will briefly write the
-			main difference criteria here.
-		</TextBlock>
+		<div class="w-full">
+			<TextBlock header="The two different personas" classes="w-full xl:w-6/12">
+				During my thorough netnography research I spotted two distinct types of users. And to not take too much of your time I will briefly write the
+				main difference criteria here.
+			</TextBlock>
+		</div>
 		<img
 			src="audiophile/audiophile-project-user-persona-distinction-table.png"
-			class="object-contain mt-8 mb-20"
+			class="object-contain mt-8 mb-20 md:mb-[7.5rem] xl:mt-16 xl:mb-36"
 			alt="Audiophile User Persona Distiction Table" />
 		<TextBlock header="User Journey">
 			Paired with the Empathy Map (which you can see here), the user journey gave a holistic overview of the experience the audiophiles go through
@@ -282,7 +296,7 @@
 	<section class="flex flex-col items-center py-16 px-6 sm:px-16 md:px-20 lg:px-[6.25rem] bg-primary">
 		<Bulb class="mb-20" />
 		<div class="flex flex-col lg:flex-row gap-10 md:gap-20">
-			<Table borderColor="border-gray-900 flex-1" tableHeader="Brainstorm Ideas" rows={brainstormIdeasRows} iconType={SmallStar} />
+			<Table classes="border-gray-900 flex-1" tableHeader="Brainstorm Ideas" rows={brainstormIdeasRows} iconType={SmallStar} />
 			<div class="flex-1 flex flex-col gap-10 md:gap-20">
 				<TextBlock header="User Journey">
 					After successfully finishing the define phase, where we understood the customer profile and their behavior, the next step was to ideate
@@ -321,29 +335,29 @@
 			<Computer class="min-w-[202px]" />
 		</div>
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 mb-10 md:mb-20">
-			<img src="audiophile/audiophile-project-wireframes-1.png" class="w-full" alt="Audiophile Wireframe" />
-			<img src="audiophile/audiophile-project-wireframes-2.png" class="w-full" alt="Audiophile Wireframe" />
-			<img src="audiophile/audiophile-project-wireframes-3.png" class="w-full" alt="Audiophile Wireframe" />
-			<img src="audiophile/audiophile-project-wireframes-4.png" class="w-full" alt="Audiophile Wireframe" />
+			<img src="audiophile/audiophile-project-wireframes-1.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
+			<img src="audiophile/audiophile-project-wireframes-2.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
+			<img src="audiophile/audiophile-project-wireframes-3.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
+			<img src="audiophile/audiophile-project-wireframes-4.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
 		</div>
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-			<img src="audiophile/audiophile-project-wireframes-5.png" class="w-full" alt="Audiophile Wireframe" />
-			<img src="audiophile/audiophile-project-wireframes-6.png" class="w-full" alt="Audiophile Wireframe" />
-			<img src="audiophile/audiophile-project-wireframes-7.png" class="w-full" alt="Audiophile Wireframe" />
-			<img src="audiophile/audiophile-project-wireframes-8.png" class="w-full" alt="Audiophile Wireframe" />
+			<img src="audiophile/audiophile-project-wireframes-5.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
+			<img src="audiophile/audiophile-project-wireframes-6.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
+			<img src="audiophile/audiophile-project-wireframes-7.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
+			<img src="audiophile/audiophile-project-wireframes-8.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
 		</div>
-		<p class="text-center">
+		<p class="text-center text-xl lg:text-2xl lg:max-w-[50rem]">
 			Our app allows the user to add a new room either by scanning it or adding pictures of it. The process continues by guiding the user through the
 			scanning part of the app. We decided to match the AR scanning process with the real world by making use of the already-known schemas or mental
 			models in regard to AR technologies. This way our solution would be more familiar to the user.
 		</p>
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 mb-8">
-			<img src="audiophile/audiophile-project-wireframes-9.png" class="w-full" alt="Audiophile Wireframe" />
-			<img src="audiophile/audiophile-project-wireframes-10.png" class="w-full" alt="Audiophile Wireframe" />
-			<img src="audiophile/audiophile-project-wireframes-11.png" class="w-full" alt="Audiophile Wireframe" />
-			<img src="audiophile/audiophile-project-wireframes-12.png" class="w-full" alt="Audiophile Wireframe" />
+			<img src="audiophile/audiophile-project-wireframes-9.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
+			<img src="audiophile/audiophile-project-wireframes-10.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
+			<img src="audiophile/audiophile-project-wireframes-11.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
+			<img src="audiophile/audiophile-project-wireframes-12.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
 		</div>
-		<p class="text-center">
+		<p class="text-center text-xl lg:text-2xl lg:max-w-[50rem]">
 			Finally, after adding the products and dragging them to the preferred place, the user receives the sound optimization feedback. The room plan
 			changes and shows the user a triangulation of the listening area, the listening space, and the distance between the speakers, all based on the
 			indicated position of the speakers by the user.
@@ -361,6 +375,15 @@
 		@screen md {
 			flex-direction: row;
 			justify-content: space-between;
+			gap: 2.5rem;
+		}
+
+		@screen lg {
+			gap: 5rem;
+		}
+
+		@screen xl {
+			gap: 8.25rem;
 		}
 	}
 
