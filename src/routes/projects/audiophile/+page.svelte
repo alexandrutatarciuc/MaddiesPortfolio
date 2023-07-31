@@ -149,7 +149,7 @@
 					on:inview_leave={handleLeave}
 					src="audiophile/audiophile-project-video-showcase-1.mov"
 					class="max-h-[40rem] project-video"
-					loop muted />
+					loop muted playsinline />
 			</div>
 			<BigStar class="mb-6" />
 			<TextBlock header="Scan room effortlessly">
