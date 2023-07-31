@@ -27,7 +27,7 @@
 		</p>
 		<!-- Eye-shape -->
 		<svg
-			class="absolute -translate-y-1/2 -translate-x-1/2 -right-24 sm:-right-40 md:-right-44 top-36 max-h-[3.5rem] sm:max-h-[5.75rem] xl:max-h-[6.75rem] shape-shadow"
+			class="absolute -translate-y-1/2 translate-x-1/2 right-0 top-36 max-h-[3.5rem] sm:max-h-[5.75rem] xl:max-h-[6.75rem] shape-shadow"
 			viewBox="0 0 195 112"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg">
@@ -37,18 +37,6 @@
 				stroke="#111111"
 				stroke-width="2" />
 		</svg>
-		<!-- Eye-shape
-		<svg
-			class="absolute -right-12 sm:-right-28 md:-right-16 inset-y-36 max-h-[3.5rem] sm:max-h-[5.75rem] xl:max-h-[6.75rem] shape-shadow"
-			viewBox="0 0 195 112"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg">
-			<path
-				d="M185.426 91.6802C164.144 102.289 123.058 118.151 83.7364 107.425C44.4146 96.6995 17.0737 62.1725 4.12569 42.2273C-0.776596 34.6757 1.8513 25.0416 9.90896 21.0251C31.191 10.4168 72.2765 -5.44576 111.598 5.27998C150.92 16.0057 178.261 50.5328 191.209 70.4778C196.111 78.0294 193.483 87.6636 185.426 91.6802ZM87.5014 93.6225C108.085 99.2371 129.323 87.1024 134.937 66.5185C140.552 45.935 128.417 24.6972 107.833 19.0826C87.2499 13.4681 66.0122 25.6029 60.3977 46.1864C54.783 66.7704 66.9178 88.008 87.5014 93.6225Z"
-				fill="#F7AEF8"
-				stroke="#111111"
-				stroke-width="2" />
-		</svg> -->
 		<!-- Flower shape -->
 		<svg
 			class="absolute -translate-y-1/2 -translate-x-1/2 -top-2 sm:-top-6 -left-2 sm:-left-6 max-h-[6rem] sm:max-h-[12rem] shape-shadow"
