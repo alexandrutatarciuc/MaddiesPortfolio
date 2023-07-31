@@ -148,8 +148,8 @@
 					on:inview_enter={handleEnter}
 					on:inview_leave={handleLeave}
 					src="audiophile/audiophile-project-video-showcase-1.mov"
-					class="max-h-[40rem]"
-					loop />
+					class="max-h-[40rem] project-video"
+					loop muted />
 			</div>
 			<BigStar class="mb-6" />
 			<TextBlock header="Scan room effortlessly">
@@ -362,5 +362,9 @@
 			flex-direction: row;
 			justify-content: space-between;
 		}
+	}
+
+	video.project-video::-webkit-media-controls {
+		display: none !important;
 	}
 </style>
