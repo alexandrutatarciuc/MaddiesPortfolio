@@ -360,7 +360,7 @@
 			<img src="audiophile/audiophile-project-wireframes-11.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
 			<img src="audiophile/audiophile-project-wireframes-12.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
 		</div>
-		<p class="text-center text-xl lg:text-2xl lg:max-w-[50rem]">
+		<p class="text-center font-light text-xl lg:text-2xl lg:max-w-[50rem]">
 			Finally, after adding the products and dragging them to the preferred place, the user receives the sound optimization feedback. The room plan
 			changes and shows the user a triangulation of the listening area, the listening space, and the distance between the speakers, all based on the
 			indicated position of the speakers by the user.
