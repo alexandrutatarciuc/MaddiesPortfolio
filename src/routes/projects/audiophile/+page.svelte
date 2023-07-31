@@ -2,6 +2,7 @@
 	import Header from '$lib/ProjectsCore/Header.svelte';
 	import TextBlock from '$lib/ProjectsCore/TextBlock.svelte';
 	import Table from '$lib/ProjectsCore/Table.svelte';
+	import ProjectLinkButton from '$lib/ProjectsCore/ProjectLinkButton.svelte';
 
 	import BigStar from '$lib/assets/projects/audiophile/audiophile-project-shape-1.svg?component';
 	import NinjaStar from '$lib/assets/projects/audiophile/audiophile-project-shape-2.svg?component';
@@ -12,6 +13,8 @@
 	import Bulb from '$lib/assets/projects/audiophile/audiophile-project-shape-bulb.svg?component';
 	import Pencil from '$lib/assets/projects/audiophile/audiophile-project-shape-pencil.svg?component';
 	import Computer from '$lib/assets/projects/audiophile/audiophile-project-shape-computer.svg?component';
+	import Target from '$lib/assets/projects/audiophile/audiophile-project-shape-target.svg?component';
+	import Eye from '$lib/assets/projects/audiophile/audiophile-project-shape-eye-horizontal.svg?component';
 
 	import { inview } from 'svelte-inview';
 	import type { ObserverEventDetails } from 'svelte-inview';
@@ -68,7 +71,7 @@
 </script>
 
 <div class="flex flex-col bg-white font-fig tree">
-	<img src="audiophile/audiophile-project-cover.png" class="min-h-[40rem] object-cover" alt="Audiophile Project Cover" />
+	<img src="audiophile/audiophile-project-cover.png" class="min-h-[40rem] max-h-screen object-cover" alt="Audiophile Project Cover" />
 	<div
 		class="flex flex-col items-center justify-center px-4 py-20 md:py-[7.5rem] md:px-12 lg:py-36 lg:px-20 xl:px-[6.25rem] gap-2 font-semibold text-center text-gray-900 bg-white font-display">
 		<h1 class="font-display text-5xl font-bold sm:text-[5.25rem] md:text-8xl">Audiophile App</h1>
@@ -171,8 +174,8 @@
 				</TextBlock>
 			</div>
 			<div class="flex flex-col lg:flex-row justify-center items-center lg:shrink-0">
-				<img src="audiophile/audiophile-project-walkthrough-2.png" class="object-fit lg:inline" alt="Audiophile app new room screen" />
-				<img src="audiophile/audiophile-project-walkthrough-3.png" class="object-fit lg:inline" alt="Audiophile app new room settings screen" />
+				<img src="audiophile/audiophile-project-walkthrough-2.png" class="object-fit" alt="Audiophile app new room screen" />
+				<img src="audiophile/audiophile-project-walkthrough-3.png" class="object-fit" alt="Audiophile app new room settings screen" />
 			</div>
 		</div>
 
@@ -326,13 +329,13 @@
 			<img src="audiophile/audiophile-project-sketch-2.png" class="w-full" alt="Audiophile Sketch" />
 			<img src="audiophile/audiophile-project-sketch-3.png" class="w-full" alt="Audiophile Sketch" />
 		</div>
-		<div class="text-block-icon">
-			<TextBlock header="Wireframes">
+		<div class="text-block-icon mb-10 md:mb-20">
+			<TextBlock header="Mock-ups & Prototype">
 				After the idea was set, the sketches drawn, and the flowchart created - the next big phase was to start designing the app. In the process, we
 				kept in mind crucial rules about the user: how prone they are towards making mistakes and being distracted, the creation of mental models and
 				their continuous update when using new products, and finally the fact that users understand visual systems.
 			</TextBlock>
-			<Computer class="min-w-[202px]" />
+			<Computer height="" width="" class="shrink-0 w-[12.5rem] md:w-[15.5rem] xl:w-[20.75rem]" viewBox="0 0 202 252" />
 		</div>
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 mb-10 md:mb-20">
 			<img src="audiophile/audiophile-project-wireframes-1.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
@@ -363,9 +366,129 @@
 			indicated position of the speakers by the user.
 		</p>
 	</section>
+	<section class="flex flex-col items-center py-20 md:py-[7.5rem] xl:py-36 px-6 sm:px-16 md:px-20 lg:px-[6.25rem]">
+		<div class="text-block-icon mb-10 md:mb-20">
+			<TextBlock header="Usability Tests">
+				After the idea was set, the sketches drawn, and the flowchart created - the next big phase was to start designing the app. In the process, we
+				kept in mind crucial rules about the user: how prone they are towards making mistakes and being distracted, the creation of mental models and
+				their continuous update when using new products, and finally the fact that users understand visual systems.
+			</TextBlock>
+			<QuestionMark height="" width="" class="shrink-0 w-[10rem] md:w-[12.5rem] xl:w-[17rem] blue-question-mark" viewBox="0 0 160 184" />
+		</div>
+		<div class="w-full grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-7 gap-12 text-xl md:text-2xl py-20 md:py-[7.5rem]">
+			<div class="py-8 px-4 md:px-12 lg:p-10 border-2 border-gray-900 flex flex-col gap-6 items-center justify-center lg:row-span-4 order-1">
+				<SmallStar width="2rem" height="2rem" viewBox="0 0 64 64" />
+				<p class="font-display text-2xl md:text-4xl">Feedback page:</p>
+				<ul class="flex flex-col gap-4 list-disc list-inside max-w-[31.25rem]">
+					<li>rather than showing errors, tell the user right away what would be the perfect audio placement.</li>
+					<li>give more thorough explanations on the provided diagnostic feedback.</li>
+					<li>add a legend so it’s easier to understand the context and feedback.</li>
+				</ul>
+			</div>
+			<div class="py-8 px-4 md:px-12 lg:p-10 border-2 border-gray-900 flex flex-col gap-6 items-center justify-center lg:row-span-3 order-4">
+				<NinjaStar width="2rem" height="2rem" viewBox="0 0 64 64" />
+				<p class="font-display text-2xl md:text-4xl">Room details page:</p>
+				<ul class="flex flex-col gap-4 list-disc list-inside max-w-[31.25rem]">
+					<li>make the room seem editable by adding an edit icon.</li>
+					<li>make the furniture more visually detailed.</li>
+				</ul>
+			</div>
+			<div class="py-8 px-4 md:px-12 lg:p-10 border-2 border-gray-900 flex flex-col gap-6 items-center justify-center lg:row-span-3 order-2">
+				<NinjaStar width="2rem" height="2rem" viewBox="0 0 64 64" />
+				<p class="font-display text-2xl md:text-4xl">Add a room page:</p>
+				<ul class="flex flex-col gap-4 list-disc list-inside max-w-[31.25rem]">
+					<li>make the walls look “editable”.</li>
+					<li>add the option to go back into the flow.</li>
+					<li>add a legend so it’s easier to understand the context and feedback.</li>
+				</ul>
+			</div>
+			<div class="py-8 px-4 md:px-12 lg:p-10 border-2 border-gray-900 flex flex-col gap-6 items-center justify-center lg:row-span-4 order-3">
+				<BigStar width="2rem" height="2rem" viewBox="0 0 64 64" />
+				<p class="font-display text-2xl md:text-4xl">Add audio-gear page:</p>
+				<ul class="flex flex-col gap-4 list-disc list-inside max-w-[31.25rem]">
+					<li>they expected the gear to be automatically added after pressing on add product.</li>
+					<li>organise the category content by alphabet order.</li>
+					<li>add a confirmation that the products have been added.</li>
+				</ul>
+			</div>
+		</div>
+		<div class="text-block-icon mb-10 md:mb-20">
+			<TextBlock header="Mock-ups & Prototype">
+				The conclusion was the following: Most feedback was related to the page that shows the sound optimization overview. Some users did not
+				immediately understand the triangulation, and others needed to see an automated suggestion of the right position, rather than just feedback on
+				what is not working. So, when creating the mock-ups and prototype itself, we kept in mind the user testing insights.
+			</TextBlock>
+			<Target height="" width="" class="shrink-0 w-[15.5rem] xl:w-[18.75rem]" viewBox="0 0 304 273" />
+		</div>
+		<div class="flex flex-col xl:flex-row xl:justify-between gap-6 xl:items-center xl:gap-[6.25rem]">
+			<div class="flex flex-col md:flex-row justify-center md:justify-between xl:justify-center gap-10 items-center lg:shrink-0">
+				<div class="flex flex-col items-center gap-4">
+					<p class="text-xl font-bold">Before</p>
+					<img src="audiophile/audiophile-project-mock-ups-1-before.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup" />
+				</div>
+				<div class="flex flex-col items-center gap-4">
+					<p class="text-xl font-bold">After</p>
+					<img src="audiophile/audiophile-project-mock-ups-1-after.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup" />
+				</div>
+			</div>
+			<div class="max-w-[37.5rem] xl:max-w-[70rem] text-xl xl:text-2xl flex flex-col gap-6">
+				<p class="xl:font-medium">
+					Visibility of system status - The design should always keep users informed about what is going on, through appropriate feedback within a
+					reasonable amount of time (Nielsen Norman Group, 2020).
+				</p>
+				<p>
+					One of these examples can be seen in the interface as a notification UI component that is present at times for guiding the user throughout
+					the flow of the solution and help them understand how to complete their tasks.
+				</p>
+			</div>
+		</div>
+
+		<div class="flex flex-col xl:flex-row-reverse xl:justify-between gap-6 xl:items-center xl:gap-[6.25rem]">
+			<div class="flex flex-col md:flex-row justify-center md:justify-between xl:justify-center gap-10 items-center lg:shrink-0">
+				<div class="flex flex-col items-center gap-4">
+					<p class="text-xl font-bold">Before</p>
+					<img src="audiophile/audiophile-project-mock-ups-2-before.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup" />
+				</div>
+				<div class="flex flex-col items-center gap-4">
+					<p class="text-xl font-bold">After</p>
+					<img src="audiophile/audiophile-project-mock-ups-2-after.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup" />
+				</div>
+			</div>
+			<div class="max-w-[37.5rem] xl:max-w-[70rem] text-xl xl:text-2xl flex flex-col gap-6">
+				<p class="xl:font-medium">
+					Help and Documentation - It’s best if the system doesn’t need any additional explanation. However, it may be necessary to provide
+					documentation to help users understand how to complete their tasks.
+				</p>
+				<p>Here we implemented a legend of the shown graphic so that the users better understand their feedback.</p>
+			</div>
+		</div>
+	</section>
+	<section
+		class="flex flex-col justify-center items-center py-20 md:py-[7.5rem] xl:py-36 px-6 sm:px-16 md:px-20 lg:px-[6.25rem] bg-primary text-gray-900 text-xl">
+		<div class="max-w-[50rem] text-center">
+			<h2 class="font-bold mb-4">Conclusion</h2>
+			<p class="mb-6">
+				Embarking on this UX project for audiophiles, I was taken aback by the unexpected complexity of the users' choices and behaviors. Delving into
+				their world of high-fidelity audio revealed a passion that went beyond the surface, with each audiophile having a unique vision of their
+				perfect sound setup. Navigating the challenges of obtaining valid data and disregarding my own biases proved to be quite humbling.
+				Nevertheless, this immersive journey taught me the importance of empathy and genuine understanding.
+			</p>
+			<p>
+				By embracing the intricacies and dedicating myself to listening not only with my ears but also with my heart, I crafted solutions that
+				resonated deeply with the audiophile community, shaping my approach to user-centered design for the future. The world of audiophiles is a
+				realm of passion, intricacy, and mystery, and I am grateful for the rewarding experience it has brought.
+			</p>
+		</div>
+	</section>
+	<section class="flex justify-between items-center py-16 px-4 md:p-16 xl:p-[6.25rem]">
+		<ProjectLinkButton href="projects/c-cube">C-Cube</ProjectLinkButton>
+		<Eye class="shape-shadow w-16 sm:w-20 md:w-[6.25rem] lg:w-[9.25rem] xl:w-[12.5rem]" viewBox="0 0 211 113"/>
+		<ProjectLinkButton href="projects/clever-coffee">Clever<br />Coffee</ProjectLinkButton>
+	</section>
 </div>
 
 <style lang="postcss">
+
 	.text-block-icon {
 		display: flex;
 		flex-direction: column;
@@ -389,5 +512,15 @@
 
 	video.project-video::-webkit-media-controls {
 		display: none !important;
+	}
+
+	:global(svg.blue-question-mark > g) {
+		fill: theme(colors.button);
+	}
+	
+	:global(svg.shape-shadow) {
+		@screen sm {
+			filter: drop-shadow(4px 3px 0px black);
+		}
 	}
 </style>

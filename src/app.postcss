@@ -2,3 +2,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.shape-shadow {
+	filter: drop-shadow(3px 2px 0px black);
+
+	@screen sm {
+		filter: drop-shadow(8px 6px 0px black);
+	}
+}

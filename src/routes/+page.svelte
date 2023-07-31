@@ -76,7 +76,7 @@
 	<h2 class="font-display text-4xl sm:text-6xl xl:text-[5.25rem] text-gray-900 mb-10 text-center font-semibold">Projects</h2>
 	<div class="flex flex-col gap-16">
 		<ProjectCard imgUrl="/projects/c-cube/c-cube-project-cover-preview.png" projectUrl="c-cube" title="C-Cube" tags="UX/UI | Branding | Web Development" />
-		<ProjectCard imgUrl="/projects/audiophile/audiophile-project-cover-preview.png" projectUrl="audiophile" title="Audiophile App" tags="Concept Development | UX | App Design" />
+		<ProjectCard imgUrl="/projects/audiophile/audiophile-project-cover.png" projectUrl="audiophile" title="Audiophile App" tags="Concept Development | UX | App Design" />
 		<ProjectCard imgUrl="/projects/my-coffee-impact/my-coffee-impact-project-cover-preview.png" projectUrl="coffee-impact" title="My Coffee Impact Platform" tags="Gamification | Website Design" />
 	</div>
 </section>
