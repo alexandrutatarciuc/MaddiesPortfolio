@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Image from 'svelte-image';
+
 	import Header from '$lib/ProjectsCore/Header.svelte';
 	import TextBlock from '$lib/ProjectsCore/TextBlock.svelte';
 	import Table from '$lib/ProjectsCore/Table.svelte';
@@ -40,7 +42,8 @@
 </script>
 
 <div class="flex flex-col bg-white font-figtree">
-	<img src="audiophile/audiophile-project-cover.png" class="min-h-[40rem] max-h-screen object-cover" alt="Audiophile Project Cover" />
+	<Image src="audiophile/audiophile-project-cover.webp" class="min-h-[40rem] max-h-screen object-cover" alt="Audiophile Project Cover" lazy={false}/>
+	<!-- <img src="audiophile/audiophile-project-cover.webp" class="min-h-[40rem] max-h-screen object-cover" alt="Audiophile Project Cover" /> -->
 	<div
 		class="flex flex-col items-center justify-center px-4 py-20 md:py-[7.5rem] md:px-12 lg:py-36 lg:px-20 xl:px-[6.25rem] gap-2 font-semibold text-center text-gray-900 bg-white font-display">
 		<h1 class="font-display text-5xl font-bold sm:text-[5.25rem] md:text-8xl">Audiophile App</h1>
@@ -135,9 +138,6 @@
 			<div class="flex flex-col lg:flex-row justify-center items-center lg:shrink-0">
 				<VideoShowcase src="audiophile/audiophile-project-video-showcase-2.mov" poster="audiophile/audiophile-project-walkthrough-2.png" />
 				<VideoShowcase src="audiophile/audiophile-project-video-showcase-3.mov" poster="audiophile/audiophile-project-walkthrough-3.png" />
-
-				<!-- <img src="audiophile/audiophile-project-walkthrough-2.png" class="object-fit" alt="Audiophile app new room screen" />
-				<img src="audiophile/audiophile-project-walkthrough-3.png" class="object-fit" alt="Audiophile app new room settings screen" /> -->
 			</div>
 		</div>
 
@@ -152,7 +152,6 @@
 			</div>
 			<div class="flex flex-col justify-center items-center lg:shrink-0">
 				<VideoShowcase src="audiophile/audiophile-project-video-showcase-4.mov" poster="audiophile/audiophile-project-walkthrough-4.png" />
-				<!-- <img src="audiophile/audiophile-project-walkthrough-4.png" class="object-fit" alt="Audiophile app new room screen" /> -->
 			</div>
 		</div>
 	</section>
@@ -288,9 +287,9 @@
 			<Pencil width="" height="" class="shrink-0 w-[13rem] xl:w-[18rem]" viewBox="0 0 417 361" />
 		</div>
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-6 lg:gap-8 mb-20 sm:mb-[7.5rem]">
-			<img src="audiophile/audiophile-project-sketch-1.png" class="lg:col-span-2 w-full" alt="Audiophile Sketch" />
-			<img src="audiophile/audiophile-project-sketch-2.png" class="w-full" alt="Audiophile Sketch" />
-			<img src="audiophile/audiophile-project-sketch-3.png" class="w-full" alt="Audiophile Sketch" />
+			<img src="audiophile/audiophile-project-sketch-1.png" class="lg:col-span-2 w-full" alt="Audiophile Sketch" loading="lazy" />
+			<img src="audiophile/audiophile-project-sketch-2.png" class="w-full" alt="Audiophile Sketch" loading="lazy" />
+			<img src="audiophile/audiophile-project-sketch-3.png" class="w-full" alt="Audiophile Sketch" loading="lazy"/>
 		</div>
 		<div class="text-block-icon mb-10 md:mb-20">
 			<TextBlock header="Mock-ups & Prototype">
@@ -301,16 +300,16 @@
 			<Computer height="" width="" class="shrink-0 w-[12.5rem] md:w-[15.5rem] xl:w-[20.75rem]" viewBox="0 0 384 414" />
 		</div>
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 mb-10 md:mb-20">
-			<img src="audiophile/audiophile-project-wireframes-1.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
-			<img src="audiophile/audiophile-project-wireframes-2.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
-			<img src="audiophile/audiophile-project-wireframes-3.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
-			<img src="audiophile/audiophile-project-wireframes-4.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
+			<img src="audiophile/audiophile-project-wireframes-1.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
+			<img src="audiophile/audiophile-project-wireframes-2.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
+			<img src="audiophile/audiophile-project-wireframes-3.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
+			<img src="audiophile/audiophile-project-wireframes-4.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
 		</div>
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-			<img src="audiophile/audiophile-project-wireframes-5.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
-			<img src="audiophile/audiophile-project-wireframes-6.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
-			<img src="audiophile/audiophile-project-wireframes-7.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
-			<img src="audiophile/audiophile-project-wireframes-8.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
+			<img src="audiophile/audiophile-project-wireframes-5.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
+			<img src="audiophile/audiophile-project-wireframes-6.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
+			<img src="audiophile/audiophile-project-wireframes-7.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
+			<img src="audiophile/audiophile-project-wireframes-8.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
 		</div>
 		<p class="text-center text-xl lg:text-2xl lg:max-w-[50rem]">
 			Our app allows the user to add a new room either by scanning it or adding pictures of it. The process continues by guiding the user through the
@@ -318,10 +317,10 @@
 			models in regard to AR technologies. This way our solution would be more familiar to the user.
 		</p>
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 mb-8">
-			<img src="audiophile/audiophile-project-wireframes-9.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
-			<img src="audiophile/audiophile-project-wireframes-10.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
-			<img src="audiophile/audiophile-project-wireframes-11.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
-			<img src="audiophile/audiophile-project-wireframes-12.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
+			<img src="audiophile/audiophile-project-wireframes-9.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
+			<img src="audiophile/audiophile-project-wireframes-10.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
+			<img src="audiophile/audiophile-project-wireframes-11.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
+			<img src="audiophile/audiophile-project-wireframes-12.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
 		</div>
 		<p class="text-center text-xl lg:text-2xl lg:max-w-[50rem]">
 			Finally, after adding the products and dragging them to the preferred place, the user receives the sound optimization feedback. The room plan
@@ -392,11 +391,11 @@
 			<div class="flex flex-col md:flex-row justify-center md:justify-between xl:justify-center gap-10 items-center lg:shrink-0">
 				<div class="flex flex-col items-center gap-4">
 					<p class="text-xl font-bold">Before</p>
-					<img src="audiophile/audiophile-project-mock-ups-1-before.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup" />
+					<img src="audiophile/audiophile-project-mock-ups-1-before.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup" loading="lazy"/>
 				</div>
 				<div class="flex flex-col items-center gap-4">
 					<p class="text-xl font-bold">After</p>
-					<img src="audiophile/audiophile-project-mock-ups-1-after.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup" />
+					<img src="audiophile/audiophile-project-mock-ups-1-after.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup" loading="lazy"/>
 				</div>
 			</div>
 			<div class="max-w-[37.5rem] xl:max-w-[70rem] text-xl xl:text-2xl flex flex-col gap-6">
@@ -415,11 +414,11 @@
 			<div class="flex flex-col md:flex-row justify-center md:justify-between xl:justify-center gap-10 items-center lg:shrink-0">
 				<div class="flex flex-col items-center gap-4">
 					<p class="text-xl font-bold">Before</p>
-					<img src="audiophile/audiophile-project-mock-ups-2-before.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup" />
+					<img src="audiophile/audiophile-project-mock-ups-2-before.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup"/>
 				</div>
 				<div class="flex flex-col items-center gap-4">
 					<p class="text-xl font-bold">After</p>
-					<img src="audiophile/audiophile-project-mock-ups-2-after.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup" />
+					<img src="audiophile/audiophile-project-mock-ups-2-after.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup"/>
 				</div>
 			</div>
 			<div class="max-w-[37.5rem] xl:max-w-[70rem] text-xl xl:text-2xl flex flex-col gap-6">
