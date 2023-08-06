@@ -1,22 +1,11 @@
 <script lang="ts">
     import { page } from '$app/stores'; // SvelteKit's store for page info
-    import { goto } from '$app/navigation';
     export let href: string = "/";
     export let label: string = "";
 
-    $: isActive = $page.url.pathname === href;
-
-    function navigate(): void {
-        goto(href);
-    }
+    $: isActive = ($page.url.pathname.split("/")[1] === "projects" && label.toLowerCase() === "projects") 
+              || $page.url.pathname === href;
   </script>
   
-  <a class:bg-primary={isActive} class="py-4 px-6 font-display text-sm lg:text-xl font-medium whitespace-nowrap rounded-full text-center min-w-0 sm:min-w-[6rem] lg:min-w-[8rem]" href="#" on:click|preventDefault={navigate}>{label}</a>
-  <!-- <a
-  class:active={$page.url.pathname.split("/")[1] ===item.href.split("/")[1]}
-  href={item.href}>
-  {item.label}
-</a> -->
-  <style>
-  </style>
+  <a class:bg-primary={isActive} class="z-20 py-4 px-6 font-display text-sm lg:text-xl font-medium whitespace-nowrap rounded-full text-center min-w-0 sm:min-w-[6rem] lg:min-w-[8rem]" {href}>{label}</a>
   
