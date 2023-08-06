@@ -1,6 +1,4 @@
 <script lang="ts">
-	import Image from 'svelte-image';
-
 	import Header from '$lib/ProjectsCore/Header.svelte';
 	import TextBlock from '$lib/ProjectsCore/TextBlock.svelte';
 	import Table from '$lib/ProjectsCore/Table.svelte';
@@ -42,8 +40,7 @@
 </script>
 
 <div class="flex flex-col bg-white font-figtree">
-	<Image src="audiophile/audiophile-project-cover.webp" class="min-h-[40rem] max-h-screen object-cover" alt="Audiophile Project Cover" lazy={false}/>
-	<!-- <img src="audiophile/audiophile-project-cover.webp" class="min-h-[40rem] max-h-screen object-cover" alt="Audiophile Project Cover" /> -->
+	<img src="audiophile/audiophile-project-cover.webp" class="min-h-[40rem] max-h-screen object-cover" alt="Audiophile Project Cover" />
 	<div
 		class="flex flex-col items-center justify-center px-4 py-20 md:py-[7.5rem] md:px-12 lg:py-36 lg:px-20 xl:px-[6.25rem] gap-2 font-semibold text-center text-gray-900 bg-white font-display">
 		<h1 class="font-display text-5xl font-bold sm:text-[5.25rem] md:text-8xl">Audiophile App</h1>
@@ -414,11 +411,11 @@
 			<div class="flex flex-col md:flex-row justify-center md:justify-between xl:justify-center gap-10 items-center lg:shrink-0">
 				<div class="flex flex-col items-center gap-4">
 					<p class="text-xl font-bold">Before</p>
-					<img src="audiophile/audiophile-project-mock-ups-2-before.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup"/>
+					<img src="audiophile/audiophile-project-mock-ups-2-before.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup" loading="lazy"/>
 				</div>
 				<div class="flex flex-col items-center gap-4">
 					<p class="text-xl font-bold">After</p>
-					<img src="audiophile/audiophile-project-mock-ups-2-after.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup"/>
+					<img src="audiophile/audiophile-project-mock-ups-2-after.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup" loading="lazy"/>
 				</div>
 			</div>
 			<div class="max-w-[37.5rem] xl:max-w-[70rem] text-xl xl:text-2xl flex flex-col gap-6">
