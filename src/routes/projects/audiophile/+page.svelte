@@ -3,6 +3,7 @@
 	import TextBlock from '$lib/ProjectsCore/TextBlock.svelte';
 	import Table from '$lib/ProjectsCore/Table.svelte';
 	import ProjectLinkButton from '$lib/ProjectsCore/ProjectLinkButton.svelte';
+	import VideoShowcase from '$lib/ProjectsCore/VideoShowcase.svelte';
 
 	import BigStar from '$lib/assets/projects/audiophile/audiophile-project-shape-1.svg?component';
 	import NinjaStar from '$lib/assets/projects/audiophile/audiophile-project-shape-2.svg?component';
@@ -15,9 +16,6 @@
 	import Computer from '$lib/assets/projects/audiophile/audiophile-project-shape-computer.svg?component';
 	import Target from '$lib/assets/projects/audiophile/audiophile-project-shape-target.svg?component';
 	import Eye from '$lib/assets/projects/audiophile/audiophile-project-shape-eye-horizontal.svg?component';
-
-	import { inview } from 'svelte-inview';
-	import type { ObserverEventDetails } from 'svelte-inview';
 
 	const userInsightsRows: string[] = [
 		'Most successful competitors in the market have features such as 360 product rotation and AR apps to vizualize speakers in their room.',
@@ -39,46 +37,17 @@
 		'HiFi Podcast',
 		'AR Room Scan that helps with audio product placement and room acoustics'
 	];
-
-	function videoPlayer(video: HTMLVideoElement) {
-		function togglePlayPause() {
-			if (video.paused) {
-				video.play();
-			} else {
-				video.pause();
-			}
-		}
-
-		video.addEventListener('click', togglePlayPause);
-
-		return {
-			// Cleanup: remove the event listener when the element is destroyed
-			destroy() {
-				video.removeEventListener('click', togglePlayPause);
-			}
-		};
-	}
-
-	function handleEnter(event: CustomEvent<ObserverEventDetails>) {
-		const video = event.target as HTMLVideoElement;
-		video.play();
-	}
-
-	function handleLeave(event: CustomEvent<ObserverEventDetails>) {
-		const video = event.target as HTMLVideoElement;
-		video.pause();
-	}
 </script>
 
-<div class="flex flex-col bg-white font-fig tree">
+<div class="flex flex-col bg-white font-figtree">
 	<img src="audiophile/audiophile-project-cover.png" class="min-h-[40rem] max-h-screen object-cover" alt="Audiophile Project Cover" />
 	<div
 		class="flex flex-col items-center justify-center px-4 py-20 md:py-[7.5rem] md:px-12 lg:py-36 lg:px-20 xl:px-[6.25rem] gap-2 font-semibold text-center text-gray-900 bg-white font-display">
 		<h1 class="font-display text-5xl font-bold sm:text-[5.25rem] md:text-8xl">Audiophile App</h1>
 		<p class="text-4xl md:text-6xl font-medium">Tapping into the HiFi purchase dilemmas.</p>
 	</div>
-	<section class="flex flex-col gap-10 px-6 sm:px-16 md:px-20 lg:px-[6.25rem] py-16 text-xl font-medium text-white bg-gray-900">
-		<div class="grid grid-flow-row grid-cols-2 gap-16 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7">
+	<section class="flex flex-col gap-10 px-6 sm:px-16 md:px-20 lg:px-[6.25rem] py-16 text-xl text-white bg-gray-900">
+		<div class="grid grid-flow-row grid-cols-2 gap-16 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 font-medium">
 			<div class="flex flex-col gap-4">
 				<p class="font-bold">Client</p>
 				<p>Audiophile.dk</p>
@@ -123,9 +92,9 @@
 			</div>
 			<div class="flex flex-col gap-10 px-6 sm:px-16 md:pr-20 lg:pr-[6.25rem] md:pl-0 md:flex-1">
 				<TextBlock header="Problem">
-					What a surprise! Buying HiFi audio equipment is not the easiest thing to do. In fact, 40% of audiophiles perceived the process of
-					researching and purchasing audio products as complex. The most frequently mentioned issues were understanding how audio products combine
-					together (e.g. how the heck to connect a synthesizer to speakers and how to choose one?), room acoustics, and information overload.
+					What a surprise! Buying HiFi audio equipment is not the easiest thing to do. In fact, <strong>40%</strong> of audiophiles perceived the process
+					of researching and purchasing audio products as complex. The most frequently mentioned issues were understanding how audio products combine together
+					(e.g. how the heck to connect a synthesizer to speakers and how to choose one?), room acoustics, and information overload.
 				</TextBlock>
 				<TextBlock header="Solution">
 					The audiophile app helps people explore product specifications with less friction. It chooses the best product for their room and identifies
@@ -152,17 +121,7 @@
 				</TextBlock>
 			</div>
 			<div class="flex flex-col justify-center items-center lg:shrink-0">
-				<!-- svelte-ignore a11y-media-has-caption -->
-				<video
-					use:videoPlayer
-					use:inview
-					on:inview_enter={handleEnter}
-					on:inview_leave={handleLeave}
-					src="audiophile/audiophile-project-video-showcase-1.mov"
-					class="max-h-[40rem] project-video"
-					loop
-					muted
-					playsinline />
+				<VideoShowcase src="audiophile/audiophile-project-video-showcase-1.mov" poster="audiophile/audiophile-project-walkthrough-1.png" />
 			</div>
 		</div>
 		<div class="flex flex-col xl:flex-row-reverse xl:justify-between gap-6 xl:items-center xl:gap-[6.25rem]">
@@ -174,8 +133,11 @@
 				</TextBlock>
 			</div>
 			<div class="flex flex-col lg:flex-row justify-center items-center lg:shrink-0">
-				<img src="audiophile/audiophile-project-walkthrough-2.png" class="object-fit" alt="Audiophile app new room screen" />
-				<img src="audiophile/audiophile-project-walkthrough-3.png" class="object-fit" alt="Audiophile app new room settings screen" />
+				<VideoShowcase src="audiophile/audiophile-project-video-showcase-2.mov" poster="audiophile/audiophile-project-walkthrough-2.png" />
+				<VideoShowcase src="audiophile/audiophile-project-video-showcase-3.mov" poster="audiophile/audiophile-project-walkthrough-3.png" />
+
+				<!-- <img src="audiophile/audiophile-project-walkthrough-2.png" class="object-fit" alt="Audiophile app new room screen" />
+				<img src="audiophile/audiophile-project-walkthrough-3.png" class="object-fit" alt="Audiophile app new room settings screen" /> -->
 			</div>
 		</div>
 
@@ -189,7 +151,8 @@
 				</TextBlock>
 			</div>
 			<div class="flex flex-col justify-center items-center lg:shrink-0">
-				<img src="audiophile/audiophile-project-walkthrough-4.png" class="object-fit" alt="Audiophile app new room screen" />
+				<VideoShowcase src="audiophile/audiophile-project-video-showcase-4.mov" poster="audiophile/audiophile-project-walkthrough-4.png" />
+				<!-- <img src="audiophile/audiophile-project-walkthrough-4.png" class="object-fit" alt="Audiophile app new room screen" /> -->
 			</div>
 		</div>
 	</section>
@@ -197,7 +160,7 @@
 		<div class="mb-20">
 			<Header>Now to the details...</Header>
 		</div>
-		<div class="flex flex-col lg:flex-row lg:justify-between justify-center items-center">
+		<div class="text-block-icon">
 			<TextBlock header="Finding the problem" classes="lg:max-w-[70rem]">
 				Before working on this project, I have never even heard of the term “audiophile”. So I had a lot of catching up to do - to understand who are
 				these people we are working for and what makes them suffer. It was completely new territory so we first wanted to jet down all our biases in
@@ -207,9 +170,7 @@
 				rate. Is it the way the products are presented? Low-quality products? Poor marketing strategy? It was a diverging approach at its best - looking
 				everywhere for new relevant information.
 			</TextBlock>
-			<div class="py-10 px-20">
-				<QuestionMark height="" width="" class="w-[10rem] md:w-[12.5rem] xl:w-[17rem]" viewBox="0 0 160 184" />
-			</div>
+			<QuestionMark height="" width="" class="shrink-0 w-[10rem] md:w-[12.5rem] xl:w-[17rem]" viewBox="0 0 240 276" />
 		</div>
 	</section>
 	<section class="bg-gray-900 text-white px-6 sm:px-16 md:px-20 lg:px-[6.25rem] py-16 flex flex-col gap-16">
@@ -233,7 +194,7 @@
 				that helped us find our final problem statement:
 			</TextBlock>
 			<div class="py-10 px-20 mt-4 mb-10 md:mb-0 md:mt-0 md:py-0 md:px-0">
-				<Diagram height="" width="" class="w-[10rem] md:w-[13.75rem] xl:w-[16.5rem]" viewBox="0 0 162 183" />
+				<Diagram height="" width="" class="w-[10rem] md:w-[13.75rem] xl:w-[16.5rem]" viewBox="0 0 267 298" />
 			</div>
 		</div>
 		<div class="grid w-full grid-cols-1 md:grid-cols-2 border-2 border-gray-900 font-display text-xl md:text-2xl mb-16">
@@ -271,7 +232,7 @@
 				The survey results confirmed our hypothesis and pointed in the direction of information overwhelm during the purchasing process. In short,
 				users need clear, simple answers to their complicated questions.
 			</TextBlock>
-			<Puzzle height="" width="" class="shrink-0 w-[17.5rem] md:w-[22.5rem] xl:w-[30rem]" viewBox="0 0 280 150" />
+			<Puzzle height="" width="" class="shrink-0 w-[17.5rem] md:w-[22.5rem] xl:w-[30rem]" viewBox="0 0 481 256" />
 		</div>
 		<div
 			class="w-full flex justify-center items-center mb-20 text-center font-medium font-display text-3xl sm:text-4xl md:text-5xl
@@ -297,7 +258,9 @@
 		<img src="audiophile/audiophile-project-user-journey.png" class="object-contain" alt="Audiophile User Journey" />
 	</section>
 	<section class="flex flex-col items-center py-16 px-6 sm:px-16 md:px-20 lg:px-[6.25rem] bg-primary">
-		<Bulb class="mb-20" />
+		<!-- <Bulb class="mb-20" /> -->
+		<!-- <QuestionMark height="" width="" class="shrink-0 w-[10rem] md:w-[12.5rem] xl:w-[17rem] blue-question-mark" viewBox="0 0 240 276" /> -->
+		<Bulb class="shrink-0 w-[11.5rem] xl:h-[17.4rem] mb-20" viewBox="0 0 180 279" />
 		<div class="flex flex-col lg:flex-row gap-10 md:gap-20">
 			<Table classes="border-gray-900 flex-1" tableHeader="Brainstorm Ideas" rows={brainstormIdeasRows} iconType={SmallStar} />
 			<div class="flex-1 flex flex-col gap-10 md:gap-20">
@@ -322,7 +285,7 @@
 				rather seek inspiration and build on top of it. As such, I used MagicPlan, Ikea Place, and other similar apps to form a vision of how the
 				Audiophile App might look like.
 			</TextBlock>
-			<Pencil class="min-w-[278px]" />
+			<Pencil width="" height="" class="shrink-0 w-[13rem] xl:w-[18rem]" viewBox="0 0 417 361" />
 		</div>
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-6 lg:gap-8 mb-20 sm:mb-[7.5rem]">
 			<img src="audiophile/audiophile-project-sketch-1.png" class="lg:col-span-2 w-full" alt="Audiophile Sketch" />
@@ -335,7 +298,7 @@
 				kept in mind crucial rules about the user: how prone they are towards making mistakes and being distracted, the creation of mental models and
 				their continuous update when using new products, and finally the fact that users understand visual systems.
 			</TextBlock>
-			<Computer height="" width="" class="shrink-0 w-[12.5rem] md:w-[15.5rem] xl:w-[20.75rem]" viewBox="0 0 202 252" />
+			<Computer height="" width="" class="shrink-0 w-[12.5rem] md:w-[15.5rem] xl:w-[20.75rem]" viewBox="0 0 384 414" />
 		</div>
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 mb-10 md:mb-20">
 			<img src="audiophile/audiophile-project-wireframes-1.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
@@ -360,7 +323,7 @@
 			<img src="audiophile/audiophile-project-wireframes-11.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
 			<img src="audiophile/audiophile-project-wireframes-12.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" />
 		</div>
-		<p class="text-center font-light text-xl lg:text-2xl lg:max-w-[50rem]">
+		<p class="text-center text-xl lg:text-2xl lg:max-w-[50rem]">
 			Finally, after adding the products and dragging them to the preferred place, the user receives the sound optimization feedback. The room plan
 			changes and shows the user a triangulation of the listening area, the listening space, and the distance between the speakers, all based on the
 			indicated position of the speakers by the user.
@@ -369,11 +332,16 @@
 	<section class="flex flex-col items-center py-20 md:py-[7.5rem] xl:py-36 px-6 sm:px-16 md:px-20 lg:px-[6.25rem]">
 		<div class="text-block-icon mb-10 md:mb-20">
 			<TextBlock header="Usability Tests">
-				After the idea was set, the sketches drawn, and the flowchart created - the next big phase was to start designing the app. In the process, we
-				kept in mind crucial rules about the user: how prone they are towards making mistakes and being distracted, the creation of mental models and
-				their continuous update when using new products, and finally the fact that users understand visual systems.
+				To test the flow and find usability problems, a part self-generated usability task was carried out. The usability test was a combination of
+				quantitative and qualitative, given the goal of both 1) understanding how intuitive the scan flow is and 2) collecting metrics such as task
+				success. Five participants took part in the first iteration.
+				<br /><br />
+				Some personal challenges have been guiding the user testing without explaining the design and understanding what is worth taking note of. Also,
+				I tried to differentiate between what the user says about the design, and how they actually interact with it. It was an interesting part of the
+				process, understanding the non-verbal cues, and what to pay attention to. We selected a couple of issues to focus on when upgrading the wireframes
+				to mock-ups.
 			</TextBlock>
-			<QuestionMark height="" width="" class="shrink-0 w-[10rem] md:w-[12.5rem] xl:w-[17rem] blue-question-mark" viewBox="0 0 160 184" />
+			<QuestionMark height="" width="" class="shrink-0 w-[10rem] md:w-[12.5rem] xl:w-[17rem] blue-question-mark" viewBox="0 0 240 276" />
 		</div>
 		<div class="w-full grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-7 gap-12 text-xl md:text-2xl py-20 md:py-[7.5rem]">
 			<div class="py-8 px-4 md:px-12 lg:p-10 border-2 border-gray-900 flex flex-col gap-6 items-center justify-center lg:row-span-4 order-1">
@@ -467,13 +435,13 @@
 		class="flex flex-col justify-center items-center py-20 md:py-[7.5rem] xl:py-36 px-6 sm:px-16 md:px-20 lg:px-[6.25rem] bg-primary text-gray-900 text-xl">
 		<div class="max-w-[50rem] text-center">
 			<h2 class="font-bold mb-4">Conclusion</h2>
-			<p class="mb-6">
+			<p class="mb-6 xl:text-2xl">
 				Embarking on this UX project for audiophiles, I was taken aback by the unexpected complexity of the users' choices and behaviors. Delving into
 				their world of high-fidelity audio revealed a passion that went beyond the surface, with each audiophile having a unique vision of their
 				perfect sound setup. Navigating the challenges of obtaining valid data and disregarding my own biases proved to be quite humbling.
 				Nevertheless, this immersive journey taught me the importance of empathy and genuine understanding.
 			</p>
-			<p>
+			<p class="xl:text-2xl">
 				By embracing the intricacies and dedicating myself to listening not only with my ears but also with my heart, I crafted solutions that
 				resonated deeply with the audiophile community, shaping my approach to user-centered design for the future. The world of audiophiles is a
 				realm of passion, intricacy, and mystery, and I am grateful for the rewarding experience it has brought.
@@ -482,13 +450,12 @@
 	</section>
 	<section class="flex justify-between items-center py-16 px-4 md:p-16 xl:p-[6.25rem]">
 		<ProjectLinkButton href="projects/c-cube">C-Cube</ProjectLinkButton>
-		<Eye class="shape-shadow w-16 sm:w-20 md:w-[6.25rem] lg:w-[9.25rem] xl:w-[12.5rem]" viewBox="0 0 211 113"/>
+		<Eye class="shape-shadow w-16 sm:w-20 md:w-[6.25rem] lg:w-[9.25rem] xl:w-[12.5rem]" viewBox="0 0 211 113" />
 		<ProjectLinkButton href="projects/clever-coffee">Clever<br />Coffee</ProjectLinkButton>
 	</section>
 </div>
 
 <style lang="postcss">
-
 	.text-block-icon {
 		display: flex;
 		flex-direction: column;
@@ -510,14 +477,10 @@
 		}
 	}
 
-	video.project-video::-webkit-media-controls {
-		display: none !important;
-	}
-
-	:global(svg.blue-question-mark > g) {
+	:global(svg.blue-question-mark > path) {
 		fill: theme(colors.button);
 	}
-	
+
 	:global(svg.shape-shadow) {
 		@screen sm {
 			filter: drop-shadow(4px 3px 0px black);
