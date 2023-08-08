@@ -1,6 +1,27 @@
 <script lang="ts">
 	import ProjectCard from './ProjectCard.svelte';
 	import Nav from '$lib/Nav.svelte';
+
+	import { cubicInOut } from 'svelte/easing';
+	import { fade, fly } from 'svelte/transition';
+	import { inview } from 'svelte-inview';
+	let isSectionVisible = false;
+
+	function handleEnterView(): void {
+		isSectionVisible = true;
+	}
+
+	type Trait = {
+		name: string;
+		isVisible: boolean;
+	};
+
+	const traits: Trait[] = [
+		{ name: 'challenging', isVisible: false },
+		{ name: 'creative', isVisible: false },
+		{ name: 'analytical', isVisible: false },
+		{ name: 'collaborative', isVisible: false }
+	];
 </script>
 
 <svelte:head>
@@ -9,7 +30,8 @@
 
 <Nav />
 <section class="flex items-center justify-center w-full min-h-screen px-6 py-24 overflow-hidden bg-white sm:px-8 md:px-15 lg:px-auto">
-	<div class="relative text-display border-2 border-gray-900 rounded-2xl mx-auto px-4 sm:px-8 md:px-10 lg:px-15 py-12 sm:py-19 flex flex-col gap-10 max-w-[70rem] hi-section">
+	<div
+		class="relative text-display border-2 border-gray-900 rounded-2xl mx-auto px-4 sm:px-8 md:px-10 lg:px-15 py-12 sm:py-19 flex flex-col gap-10 max-w-[70rem] hi-section">
 		<h1 class="font-display text-center font-semibold text-3xl sm:text-5xl md:text-6xl lg:text-[5.25rem] lg:leading-none xl:text-8xl">
 			Hi, I'm Maddie!
 			<br />
@@ -22,8 +44,8 @@
 			</div>
 		</h1>
 		<p class="text-xl text-center md:text-2xl font-display font-500">
-			My purpose is to give voice to overlooked perspectives, fostering meaningful connections and inclusivity. I channel my skills to support those with meaningful projects,
-			ensuring their visions reach a wider audience.
+			My purpose is to give voice to overlooked perspectives, fostering meaningful connections and inclusivity. I channel my skills to support those
+			with meaningful projects, ensuring their visions reach a wider audience.
 		</p>
 		<!-- Eye-shape -->
 		<svg
@@ -63,21 +85,46 @@
 		</svg>
 	</div>
 </section>
-<section class="min-h-screen w-full bg-button px-6 sm:px-8 md:px-15 xl:px-[6.25rem] py-20 sm:py-30 xl:py-[8.75rem] flex flex-col justify-center gap-16">
-	<p class="text-2xl font-medium text-white font-display sm:text-4xl">I am looking forward to jobs that are...</p>
-	<div class="flex flex-col gap-6 sm:gap-8 font-display text-4xl sm:text-6xl md:text-[5.25rem] xl:text-8xl text-primary font-bold">
-		<p>challenging</p>
-		<p>creative</p>
-		<p>analytical</p>
-		<p>collaborative</p>
-	</div>
+
+<section use:inview={{ unobserveOnEnter: true, rootMargin: '-30%' }} on:inview_enter={handleEnterView} class="min-h-screen">
+	{#if isSectionVisible}
+		<div
+			in:fade
+			class="min-h-screen w-full bg-button px-6 sm:px-8 md:px-15 xl:px-[6.25rem] py-20 sm:py-30 xl:py-[8.75rem] flex flex-col justify-center gap-16">
+			<p class="text-2xl font-medium text-white font-display sm:text-4xl">I am looking forward to jobs that are...</p>
+			<div class="flex flex-col gap-6 sm:gap-8 font-display text-4xl sm:text-6xl md:text-[5.25rem] xl:text-8xl text-primary font-bold">
+				{#each traits as trait}
+					<div use:inview={{ unobserveOnEnter: true, rootMargin: '-150px' }} on:inview_enter={() => (trait.isVisible = true)}>
+						{#if trait.isVisible}
+							<p in:fly={{ y: 500, duration: 700, easing: cubicInOut}}>
+								{trait.name}
+							</p>
+						{/if}
+					</div>
+				{/each}
+			</div>
+		</div>
+	{/if}
 </section>
+
 <section class="bg-white px-4 sm:px-8 md:px-12 lg:px-16 xl:px-[6.25rem] py-20 md:py-36">
 	<h2 class="font-display text-4xl sm:text-6xl xl:text-[5.25rem] text-gray-900 mb-10 text-center font-semibold">Projects</h2>
-	<div class="flex flex-col gap-16">
-		<ProjectCard imgUrl="/projects/c-cube/c-cube-project-cover-preview.png" projectUrl="c-cube" title="C-Cube" tags="UX/UI | Branding | Web Development" />
-		<ProjectCard imgUrl="/projects/audiophile/audiophile-project-cover.webp" projectUrl="audiophile" title="Audiophile App" tags="Concept Development | UX | App Design" />
-		<ProjectCard imgUrl="/projects/my-coffee-impact/my-coffee-impact-project-cover-preview.png" projectUrl="coffee-impact" title="My Coffee Impact Platform" tags="Gamification | Website Design" />
+	<div class="grid grid-rows-3 auto-rows-min gap-16">
+		<ProjectCard
+			imgUrl="/projects/c-cube/c-cube-project-cover-preview.png"
+			projectUrl="c-cube"
+			title="C-Cube"
+			tags="UX/UI | Branding | Web Development" />
+		<ProjectCard
+			imgUrl="/projects/audiophile/audiophile-project-cover.webp"
+			projectUrl="audiophile"
+			title="Audiophile App"
+			tags="Concept Development | UX | App Design" />
+		<ProjectCard
+			imgUrl="/projects/my-coffee-impact/my-coffee-impact-project-cover-preview.png"
+			projectUrl="coffee-impact"
+			title="My Coffee Impact Platform"
+			tags="Gamification | Website Design" />
 	</div>
 </section>
 
