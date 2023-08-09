@@ -43,7 +43,7 @@
 		on:mouseout={handleInteractionEnd}
 		on:click|preventDefault={navigateToProject}
 		>
-		<img src={imgUrl} alt={title} class="object-cover h-full w-full aspect-video hover:cursor-none " />
+		<img src={imgUrl} alt={title} class="object-cover h-full w-full aspect-video hover:cursor-none" />
 		{#if showCursor}
 			<svg
 				id="customCursor"

@@ -36,10 +36,14 @@
 			Hi, I'm Maddie!
 			<br />
 			<div class="sm:mt-5">
-				A <span
-					class="inline-block bg-button text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl transform -rotate-6 outline-offset-[-6px] sm:outline-offset-[-8px] lg:outline-offset-[-10px] xl:outline-offset-[-14px] inline-tag p-3 sm:p-4 md:p-5 lg:p-6 xl:p-8 rounded-full ml-1 mr-3 lg:ml-2 lg:mr-6">
+				A <div class="inline-block relative">
+					<button
+					class="relative inline-block bg-button text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl outline-offset-[-6px] sm:outline-offset-[-8px] lg:outline-offset-[-10px] xl:outline-offset-[-14px] inline-tag p-3 sm:p-4 md:p-5 lg:p-6 xl:p-8 rounded-full ml-1 mr-3 lg:ml-2 lg:mr-6
+					transform -rotate-6 hover:rotate-6 transition-transform ">
 					UX/UI
-				</span>
+				</button>
+				</div>
+
 				Designer.
 			</div>
 		</h1>
@@ -96,7 +100,7 @@
 				{#each traits as trait}
 					<div use:inview={{ unobserveOnEnter: true, rootMargin: '-150px' }} on:inview_enter={() => (trait.isVisible = true)}>
 						{#if trait.isVisible}
-							<p in:fly={{ y: 500, duration: 700, easing: cubicInOut}}>
+							<p in:fly={{ y: 400, duration: 700, easing: cubicInOut }}>
 								{trait.name}
 							</p>
 						{/if}
@@ -146,6 +150,12 @@
 			-webkit-box-shadow: 5px 6px 0px 0px theme(colors.gray.900);
 			-moz-box-shadow: 5px 6px 0px 0px theme(colors.gray.900);
 		}
+	}
+
+	.inline-tag:active {
+		box-shadow: 1px 2px 0px 0px theme(colors.gray.900);
+		top: 4px;
+		left: 3px;
 	}
 
 	.hi-section {
