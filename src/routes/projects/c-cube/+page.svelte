@@ -25,7 +25,7 @@
 			<ProjectOverviewItem header="Category" subHeader="Non-Profit Org." />
 		</svelte:fragment>
 		<div class="flex flex-col gap-10 md:gap-16 lg:flex-row xl:mr-[6.25rem]">
-			<TextBlock header="Project goal" classes="flex-1">
+			<TextBlock header="Project goal" classes="overview-text-block">
 				C-cube is a non-profit organisation that has multiple cultural and entrepreneurial projects. To establish a more professional online presence
 				and attract more financial partners or interns, it needed a new website and online brand identity.
 			</TextBlock>
@@ -158,6 +158,11 @@
 </div>
 
 <style lang="postcss">
+	:global(.overview-text-block path) {
+		@screen lg {
+			font-size: 1.25rem !important;
+		}
+	}
 	.showcase-container {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
