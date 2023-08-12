@@ -4,6 +4,12 @@
 	import Table from '$lib/ProjectsCore/Table.svelte';
 	import ProjectLinkButton from '$lib/ProjectsCore/ProjectLinkButton.svelte';
 	import VideoShowcase from '$lib/ProjectsCore/VideoShowcase.svelte';
+	import ProjectTitle from '$lib/ProjectsCore/ProjectTitle.svelte';
+	import ProjectCover from '$lib/ProjectsCore/ProjectCover.svelte';
+	import ProjectOverview from '$lib/ProjectsCore/ProjectOverview.svelte';
+	import ProjectOverviewItem from '$lib/ProjectsCore/ProjectOverviewItem.svelte';
+	import ProjectConclusion from '$lib/ProjectsCore/ProjectConclusion.svelte';
+	import ProjectFooter from '$lib/ProjectsCore/ProjectFooter.svelte';
 
 	import BigStar from '$lib/assets/projects/audiophile/audiophile-project-shape-1.svg?component';
 	import NinjaStar from '$lib/assets/projects/audiophile/audiophile-project-shape-2.svg?component';
@@ -40,31 +46,15 @@
 </script>
 
 <div class="flex flex-col bg-white font-figtree">
-	<img src="audiophile/audiophile-project-cover.webp" class="min-h-[40rem] max-h-screen object-cover" alt="Audiophile Project Cover" />
-	<div
-		class="flex flex-col items-center justify-center px-4 py-20 md:py-[7.5rem] md:px-12 lg:py-36 lg:px-20 xl:px-[6.25rem] gap-2 font-semibold text-center text-gray-900 bg-white font-display">
-		<h1 class="font-display text-5xl font-bold sm:text-[5.25rem] md:text-8xl">Audiophile App</h1>
-		<p class="text-4xl md:text-6xl font-medium">Tapping into the HiFi purchase dilemmas.</p>
-	</div>
-	<section class="flex flex-col gap-10 px-6 sm:px-16 md:px-20 lg:px-[6.25rem] py-16 text-xl text-white bg-gray-900">
-		<div class="grid grid-flow-row grid-cols-2 gap-16 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 font-medium">
-			<div class="flex flex-col gap-4">
-				<p class="font-bold">Client</p>
-				<p>Audiophile.dk</p>
-			</div>
-			<div class="flex flex-col gap-4">
-				<p class="font-bold">Year</p>
-				<p>2022</p>
-			</div>
-			<div class="flex flex-col gap-4">
-				<p class="font-bold">Category</p>
-				<p>E-commerce</p>
-			</div>
-			<div class="flex flex-col gap-4">
-				<p class="font-bold">Duration</p>
-				<p>3 months</p>
-			</div>
-		</div>
+	<ProjectCover src="audiophile/audiophile-project-cover.webp" alt="Audiophile Project Cover" />
+	<ProjectTitle title="Audiophile App" subHeader="Tapping into the HiFi purchase dilemmas." />
+	<ProjectOverview>
+		<svelte:fragment slot="item">
+			<ProjectOverviewItem header="Client" subHeader="Audiophile.dk" />
+			<ProjectOverviewItem header="Year" subHeader="2022" />
+			<ProjectOverviewItem header="Category" subHeader="E-commerce" />
+			<ProjectOverviewItem header="Duration" subHeader="3 months" />
+		</svelte:fragment>
 		<div class="flex flex-col gap-4">
 			<p class="font-bold">Background</p>
 			<p class="lg:mr-48 xl:mr-96">
@@ -72,8 +62,7 @@
 				user pains and come up with an innovative digital concept that would help convert more customers. The team consisted of two people.
 			</p>
 		</div>
-		<button class="py-6 px-8 bg-primary text-gray-900 font-bold self-start">See prototype</button>
-	</section>
+	</ProjectOverview>
 	<section class="pt-20">
 		<div class="px-6 sm:px-16 md:px-20 lg:px-[6.25rem] xl:px-[12.5rem] flex flex-col gap-4 justify-center items-center text-xl text-center">
 			<Header>Brief summary.</Header>
@@ -286,7 +275,7 @@
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-6 lg:gap-8 mb-20 sm:mb-[7.5rem]">
 			<img src="audiophile/audiophile-project-sketch-1.png" class="lg:col-span-2 w-full" alt="Audiophile Sketch" loading="lazy" />
 			<img src="audiophile/audiophile-project-sketch-2.png" class="w-full" alt="Audiophile Sketch" loading="lazy" />
-			<img src="audiophile/audiophile-project-sketch-3.png" class="w-full" alt="Audiophile Sketch" loading="lazy"/>
+			<img src="audiophile/audiophile-project-sketch-3.png" class="w-full" alt="Audiophile Sketch" loading="lazy" />
 		</div>
 		<div class="text-block-icon mb-10 md:mb-20">
 			<TextBlock header="Mock-ups & Prototype">
@@ -297,16 +286,16 @@
 			<Computer height="" width="" class="shrink-0 w-[12.5rem] md:w-[15.5rem] xl:w-[20.75rem]" viewBox="0 0 384 414" />
 		</div>
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 mb-10 md:mb-20">
-			<img src="audiophile/audiophile-project-wireframes-1.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
-			<img src="audiophile/audiophile-project-wireframes-2.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
-			<img src="audiophile/audiophile-project-wireframes-3.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
-			<img src="audiophile/audiophile-project-wireframes-4.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
+			<img src="audiophile/audiophile-project-wireframes-1.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy" />
+			<img src="audiophile/audiophile-project-wireframes-2.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy" />
+			<img src="audiophile/audiophile-project-wireframes-3.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy" />
+			<img src="audiophile/audiophile-project-wireframes-4.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy" />
 		</div>
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-			<img src="audiophile/audiophile-project-wireframes-5.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
-			<img src="audiophile/audiophile-project-wireframes-6.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
-			<img src="audiophile/audiophile-project-wireframes-7.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
-			<img src="audiophile/audiophile-project-wireframes-8.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
+			<img src="audiophile/audiophile-project-wireframes-5.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy" />
+			<img src="audiophile/audiophile-project-wireframes-6.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy" />
+			<img src="audiophile/audiophile-project-wireframes-7.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy" />
+			<img src="audiophile/audiophile-project-wireframes-8.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy" />
 		</div>
 		<p class="text-center text-xl lg:text-2xl lg:max-w-[50rem]">
 			Our app allows the user to add a new room either by scanning it or adding pictures of it. The process continues by guiding the user through the
@@ -314,10 +303,10 @@
 			models in regard to AR technologies. This way our solution would be more familiar to the user.
 		</p>
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 mb-8">
-			<img src="audiophile/audiophile-project-wireframes-9.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
-			<img src="audiophile/audiophile-project-wireframes-10.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
-			<img src="audiophile/audiophile-project-wireframes-11.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
-			<img src="audiophile/audiophile-project-wireframes-12.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy"/>
+			<img src="audiophile/audiophile-project-wireframes-9.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy" />
+			<img src="audiophile/audiophile-project-wireframes-10.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy" />
+			<img src="audiophile/audiophile-project-wireframes-11.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy" />
+			<img src="audiophile/audiophile-project-wireframes-12.png" class="w-full max-w-[580px]" alt="Audiophile Wireframe" loading="lazy" />
 		</div>
 		<p class="text-center text-xl lg:text-2xl lg:max-w-[50rem]">
 			Finally, after adding the products and dragging them to the preferred place, the user receives the sound optimization feedback. The room plan
@@ -388,11 +377,11 @@
 			<div class="flex flex-col md:flex-row justify-center md:justify-between xl:justify-center gap-10 items-center lg:shrink-0">
 				<div class="flex flex-col items-center gap-4">
 					<p class="text-xl font-bold">Before</p>
-					<img src="audiophile/audiophile-project-mock-ups-1-before.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup" loading="lazy"/>
+					<img src="audiophile/audiophile-project-mock-ups-1-before.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup" loading="lazy" />
 				</div>
 				<div class="flex flex-col items-center gap-4">
 					<p class="text-xl font-bold">After</p>
-					<img src="audiophile/audiophile-project-mock-ups-1-after.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup" loading="lazy"/>
+					<img src="audiophile/audiophile-project-mock-ups-1-after.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup" loading="lazy" />
 				</div>
 			</div>
 			<div class="max-w-[37.5rem] xl:max-w-[70rem] text-xl xl:text-2xl flex flex-col gap-6">
@@ -411,11 +400,11 @@
 			<div class="flex flex-col md:flex-row justify-center md:justify-between xl:justify-center gap-10 items-center lg:shrink-0">
 				<div class="flex flex-col items-center gap-4">
 					<p class="text-xl font-bold">Before</p>
-					<img src="audiophile/audiophile-project-mock-ups-2-before.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup" loading="lazy"/>
+					<img src="audiophile/audiophile-project-mock-ups-2-before.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup" loading="lazy" />
 				</div>
 				<div class="flex flex-col items-center gap-4">
 					<p class="text-xl font-bold">After</p>
-					<img src="audiophile/audiophile-project-mock-ups-2-after.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup" loading="lazy"/>
+					<img src="audiophile/audiophile-project-mock-ups-2-after.png" class="object-fit max-h-[630px]" alt="Audiophile Mockup" loading="lazy" />
 				</div>
 			</div>
 			<div class="max-w-[37.5rem] xl:max-w-[70rem] text-xl xl:text-2xl flex flex-col gap-6">
@@ -427,52 +416,27 @@
 			</div>
 		</div>
 	</section>
-	<section
-		class="flex flex-col justify-center items-center py-20 md:py-[7.5rem] xl:py-36 px-6 sm:px-16 md:px-20 lg:px-[6.25rem] bg-primary text-gray-900 text-xl">
-		<div class="max-w-[50rem] text-center">
-			<h2 class="font-bold mb-4">Conclusion</h2>
-			<p class="mb-6 xl:text-2xl">
-				Embarking on this UX project for audiophiles, I was taken aback by the unexpected complexity of the users' choices and behaviors. Delving into
-				their world of high-fidelity audio revealed a passion that went beyond the surface, with each audiophile having a unique vision of their
-				perfect sound setup. Navigating the challenges of obtaining valid data and disregarding my own biases proved to be quite humbling.
-				Nevertheless, this immersive journey taught me the importance of empathy and genuine understanding.
-			</p>
-			<p class="xl:text-2xl">
-				By embracing the intricacies and dedicating myself to listening not only with my ears but also with my heart, I crafted solutions that
-				resonated deeply with the audiophile community, shaping my approach to user-centered design for the future. The world of audiophiles is a
-				realm of passion, intricacy, and mystery, and I am grateful for the rewarding experience it has brought.
-			</p>
-		</div>
-	</section>
-	<section class="flex justify-between items-center py-16 px-4 md:p-16 xl:p-[6.25rem]">
+	<ProjectConclusion>
+		Embarking on this UX project for audiophiles, I was taken aback by the unexpected complexity of the users' choices and behaviors. Delving into
+		their world of high-fidelity audio revealed a passion that went beyond the surface, with each audiophile having a unique vision of their perfect
+		sound setup. Navigating the challenges of obtaining valid data and disregarding my own biases proved to be quite humbling. Nevertheless, this
+		immersive journey taught me the importance of empathy and genuine understanding.<br /><br />
+		By embracing the intricacies and dedicating myself to listening not only with my ears but also with my heart, I crafted solutions that resonated deeply
+		with the audiophile community, shaping my approach to user-centered design for the future. The world of audiophiles is a realm of passion, intricacy,
+		and mystery, and I am grateful for the rewarding experience it has brought.
+	</ProjectConclusion>
+	<!-- <section class="flex justify-between items-center py-16 px-4 md:p-16 xl:p-[6.25rem]">
 		<ProjectLinkButton href="projects/c-cube">C-Cube</ProjectLinkButton>
 		<Eye class="shape-shadow w-16 sm:w-20 md:w-[6.25rem] lg:w-[9.25rem] xl:w-[12.5rem]" viewBox="0 0 211 113" />
 		<ProjectLinkButton href="projects/clever-coffee">Clever<br />Coffee</ProjectLinkButton>
-	</section>
+	</section> -->
+	<ProjectFooter>
+		<ProjectLinkButton href="c-cube" slot="previous">C-Cube</ProjectLinkButton>
+		<ProjectLinkButton href="clever-coffee" slot="next">Clever<br />Coffee</ProjectLinkButton>
+	</ProjectFooter>
 </div>
 
 <style lang="postcss">
-	.text-block-icon {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 2rem;
-
-		@screen md {
-			flex-direction: row;
-			justify-content: space-between;
-			gap: 2.5rem;
-		}
-
-		@screen lg {
-			gap: 5rem;
-		}
-
-		@screen xl {
-			gap: 8.25rem;
-		}
-	}
-
 	:global(svg.blue-question-mark > path) {
 		fill: theme(colors.button);
 	}
