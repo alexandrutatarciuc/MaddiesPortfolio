@@ -1,25 +1,45 @@
 <script lang="ts">
 	import ProjectCard from './ProjectCard.svelte';
-	import Nav from '$lib/Nav.svelte';
+	import Nav from '$lib/Navigation/Nav.svelte';
 
 	import { cubicInOut, backInOut, backOut, elasticInOut, elasticOut, elasticIn } from 'svelte/easing';
 	import { onMount } from 'svelte';
 	import { fade, fly, scale } from 'svelte/transition';
 	import { inview } from 'svelte-inview';
 
-	function spin(node: any, { duration = 5000, easing = elasticOut, times = 1 } = {}) {
+	function isFirstLoad(): boolean {
+		const key = 'hasLoadedBefore';
+		const hasLoadedBefore = sessionStorage.getItem(key);
+
+		if (hasLoadedBefore === null) {
+			sessionStorage.setItem(key, 'true');
+			return true;
+		}
+
+		return false;
+	}
+
+	let shouldTransition = false;
+	let isPageLoaded = false;
+
+	onMount(() => {
+		isPageLoaded = true;
+		shouldTransition = isFirstLoad();
+	});
+
+	let globalDelay = 150;
+
+	function spin(node: any, { duration = 5000, easing = elasticOut, times = 1, delay = globalDelay } = {}) {
 		return {
 			duration,
 			easing,
+			delay,
 			css: (t: number) => {
 				const degrees = 360 * times * t;
 				return `transform: scale(${t}) rotate(${degrees}deg);`;
 			}
 		};
 	}
-
-	let isPageLoaded = false;
-	onMount(() => (isPageLoaded = true));
 
 	let isSectionVisible = false;
 
@@ -44,33 +64,36 @@
 	<title>Home</title>
 </svelte:head>
 
-<Nav />
+<Nav {shouldTransition} />
 <section class="flex items-center justify-center w-full min-h-screen px-6 py-24 overflow-hidden bg-white sm:px-8 md:px-15 lg:px-auto">
 	{#if isPageLoaded}
-		<div
-			class="relative text-display border-2 border-gray-900 rounded-2xl mx-auto px-4 sm:px-8 md:px-10 lg:px-15 py-12 sm:py-19 flex flex-col gap-10 max-w-[70rem] hi-section">
-			<h1 class="font-display text-center font-semibold text-3xl sm:text-5xl md:text-6xl lg:text-[5.25rem] lg:leading-none xl:text-8xl">
-				Hi, I'm Maddie!
-				<br />
-				<div class="sm:mt-5">
-					A <div class="inline-block relative">
-						<button
-							class="relative inline-block bg-button text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl outline-offset-[-6px] sm:outline-offset-[-8px] lg:outline-offset-[-10px] xl:outline-offset-[-14px] inline-tag p-3 sm:p-4 md:p-5 lg:p-6 xl:p-8 rounded-full ml-1 mr-3 lg:ml-2 lg:mr-6
+		<div class="relative">
+			<div
+				transition:fade={{ delay: globalDelay }}
+				class="text-display border-2 border-gray-900 rounded-2xl mx-auto px-4 sm:px-8 md:px-10 lg:px-15 py-12 sm:py-19 flex flex-col gap-10 max-w-[70rem] hi-section">
+				<h1 class="font-display text-center font-semibold text-3xl sm:text-5xl md:text-6xl lg:text-[5.25rem] lg:leading-none xl:text-8xl">
+					Hi, I'm Maddie!
+					<br />
+					<div class="sm:mt-5">
+						A <div class="inline-block relative">
+							<button
+								class="relative inline-block bg-button text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl outline-offset-[-6px] sm:outline-offset-[-8px] lg:outline-offset-[-10px] xl:outline-offset-[-14px] inline-tag p-3 sm:p-4 md:p-5 lg:p-6 xl:p-8 rounded-full ml-1 mr-3 lg:ml-2 lg:mr-6
 					transform -rotate-6 hover:rotate-6 transition-transform">
-							UX/UI
-						</button>
-					</div>
+								UX/UI
+							</button>
+						</div>
 
-					Designer.
-				</div>
-			</h1>
-			<p class="text-xl text-center md:text-2xl font-display font-500">
-				My purpose is to give voice to overlooked perspectives, fostering meaningful connections and inclusivity. I channel my skills to support those
-				with meaningful projects, ensuring their visions reach a wider audience.
-			</p>
+						Designer.
+					</div>
+				</h1>
+				<p class="text-xl text-center md:text-2xl font-display font-500">
+					My purpose is to give voice to overlooked perspectives, fostering meaningful connections and inclusivity. I channel my skills to support
+					those with meaningful projects, ensuring their visions reach a wider audience.
+				</p>
+			</div>
 			<!-- Eye-shape -->
 			<svg
-				transition:scale={{easing: elasticOut, duration: 2000, delay: 200}}
+				transition:scale={{ easing: elasticOut, duration: 2000, delay: globalDelay }}
 				class="absolute -translate-y-1/2 translate-x-1/2 right-0 top-36 max-h-[3.5rem] sm:max-h-[5.75rem] xl:max-h-[6.75rem] shape-shadow transition-transform ease-in-out duration-500 hover:-rotate-[30deg]"
 				viewBox="0 0 195 112"
 				fill="none"
@@ -96,7 +119,7 @@
 			</svg>
 			<!-- Small cloud shape -->
 			<svg
-				transition:spin={{duration: 1000, easing: backOut}}
+				transition:spin={{ duration: 1000, easing: backOut }}
 				class="absolute -bottom-14 sm:-bottom-24 -left-12 sm:-left-28 max-h-[6.25rem] sm:max-h-[10.5rem] shape-shadow transition-transform ease-in-out duration-1000 hover:rotate-[360deg]"
 				viewBox="0 0 228 228"
 				fill="none"
