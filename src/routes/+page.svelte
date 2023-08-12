@@ -107,7 +107,7 @@
 			<!-- Flower shape -->
 			<svg
 				transition:spin
-				class="absolute -top-14 sm:-top-28  max-h-[6rem] sm:max-h-[12rem] shape-shadow transition-transform ease-in-out duration-1000 hover:rotate-[360deg]"
+				class="absolute -top-14 sm:-top-28 w-auto max-h-[6rem] sm:max-h-[12rem] shape-shadow transition-transform ease-in-out duration-1000 hover:rotate-[360deg]"
 				viewBox="0 0 295 295"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg">
