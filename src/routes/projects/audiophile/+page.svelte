@@ -425,11 +425,6 @@
 		with the audiophile community, shaping my approach to user-centered design for the future. The world of audiophiles is a realm of passion, intricacy,
 		and mystery, and I am grateful for the rewarding experience it has brought.
 	</ProjectConclusion>
-	<!-- <section class="flex justify-between items-center py-16 px-4 md:p-16 xl:p-[6.25rem]">
-		<ProjectLinkButton href="projects/c-cube">C-Cube</ProjectLinkButton>
-		<Eye class="shape-shadow w-16 sm:w-20 md:w-[6.25rem] lg:w-[9.25rem] xl:w-[12.5rem]" viewBox="0 0 211 113" />
-		<ProjectLinkButton href="projects/clever-coffee">Clever<br />Coffee</ProjectLinkButton>
-	</section> -->
 	<ProjectFooter>
 		<ProjectLinkButton href="c-cube" slot="previous">C-Cube</ProjectLinkButton>
 		<ProjectLinkButton href="clever-coffee" slot="next">Clever<br />Coffee</ProjectLinkButton>
