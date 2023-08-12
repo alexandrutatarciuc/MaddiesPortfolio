@@ -32,18 +32,15 @@
 
 <div class="flex flex-col gap-6">
 	<!-- svelte-ignore a11y-mouse-events-have-key-events -->
-	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<div
+	<a
 		class="relative"
-		role="img"
 		aria-label={title}
 		on:mouseover={handleInteractionStart}
 		on:mousemove={updatePosition}
 		on:mouseout={handleInteractionEnd}
-		on:click|preventDefault={navigateToProject}
-		>
-		<img src={imgUrl} alt={title} class="object-cover hover:cursor-none" />
+		data-sveltekit-preload-data="hover"
+		href={'projects/' + projectUrl}>
+		<img src={imgUrl} alt={title} class="object-cover h-full w-full aspect-video hover:cursor-none" />
 		{#if showCursor}
 			<svg
 				id="customCursor"
@@ -62,7 +59,7 @@
 					fill="#F7AEF8" />
 			</svg>
 		{/if}
-	</div>
+	</a>
 	<div class="text-center text-gray-900 font-display">
 		<h3 class="mb-2 text-2xl font-normal sm:text-5xl">{title}</h3>
 		<div class="inline-block px-6 py-4 text-base border border-gray-900 rounded-full sm:text-2xl">
