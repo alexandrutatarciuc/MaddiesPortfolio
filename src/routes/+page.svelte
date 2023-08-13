@@ -61,7 +61,7 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Mădălina Chelaru — UX/UI Designer</title>
 </svelte:head>
 
 <Nav {shouldTransition} />

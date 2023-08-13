@@ -45,10 +45,15 @@
 	];
 </script>
 
+<svelte:head>
+	<title>Mădălina Chelaru — Audiophile</title>
+</svelte:head>
+
 <div class="flex flex-col bg-white font-figtree">
 	<ProjectCover src="audiophile/audiophile-project-cover.webp" alt="Audiophile Project Cover" />
 	<ProjectTitle title="Audiophile App" subHeader="Tapping into the HiFi purchase dilemmas." />
-	<ProjectOverview>
+	<ProjectOverview
+		buttonHref="https://www.figma.com/proto/rXFY5duw6m0uWhdlSYj15H/Bachelor-Thesis-Audiophille.dk?type=design&node-id=253-5848&t=KTLjWpV325eT5tH9-0&scaling=scale-down&page-id=253%3A5848&starting-point-node-id=253%3A5849&show-proto-sidebar=1">
 		<svelte:fragment slot="item">
 			<ProjectOverviewItem header="Client" subHeader="Audiophile.dk" />
 			<ProjectOverviewItem header="Year" subHeader="2022" />

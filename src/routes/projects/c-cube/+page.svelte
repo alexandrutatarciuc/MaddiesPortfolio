@@ -15,10 +15,14 @@
 	import Puzzle from '$lib/assets/projects/audiophile/audiophile-project-shape-puzzle.svg?component';
 </script>
 
+<svelte:head>
+	<title>Mădălina Chelaru — C-Cube</title>
+</svelte:head>
+
 <div class="flex flex-col bg-white font-figtree text-4xl">
 	<ProjectCover src="c-cube/c-cube-project-cover.png" alt="C-Cube Project Cover" />
 	<ProjectTitle title="C-Cube" subHeader="Giving voice and creating a platform for change." />
-	<ProjectOverview>
+	<ProjectOverview buttonLabel="See website" buttonHref="https://c-cube.webflow.io/">
 		<svelte:fragment slot="item">
 			<ProjectOverviewItem header="Client" subHeader="C-Cube" />
 			<ProjectOverviewItem header="Year" subHeader="2023" />
