@@ -7,5 +7,5 @@
 	<title>Mădălina Chelaru — CV</title>
 </svelte:head>
 
-<Nav />
+<Nav shouldTransition={false}/>
 <WorkInProgressLayout />

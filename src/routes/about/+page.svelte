@@ -7,5 +7,5 @@
 	<title>Mădălina Chelaru — About me</title>
 </svelte:head>
 
-<Nav />
+<Nav shouldTransition={false}/>
 <WorkInProgressLayout />
