@@ -91,14 +91,14 @@
 		</div>
 	</ProjectSection>
 	<div class="bg-secondary grid grid-cols-2 grid-rows-6 gap-x-8 gap-y-8">
-		<img src="c-cube/c-cube-project-moodboard-1.png" alt="C-Cube Project Moodboard" class="h-full object-cover row-span-2 row-start-1" />
-		<img src="c-cube/c-cube-project-moodboard-3.png" alt="C-Cube Project Moodboard" class="h-full object-cover row-span-2 row-start-3" />
-		<img src="c-cube/c-cube-project-moodboard-5.png" alt="C-Cube Project Moodboard" class="h-full object-cover row-span-2 row-start-5" />
+		<img src="c-cube/c-cube-project-moodboard-1.png" alt="C-Cube Project Moodboard" class="h-full w-full object-cover row-span-2 row-start-1" />
+		<img src="c-cube/c-cube-project-moodboard-3.png" alt="C-Cube Project Moodboard" class="h-full w-full object-cover row-span-2 row-start-3" />
+		<img src="c-cube/c-cube-project-moodboard-5.png" alt="C-Cube Project Moodboard" class="h-full w-full object-cover row-span-2 row-start-5" />
 
-		<img src="c-cube/c-cube-project-moodboard-2.png" alt="C-Cube Project Moodboard" class="h-full object-cover row-span-2 row-start-2" />
-		<img src="c-cube/c-cube-project-moodboard-4.png" alt="C-Cube Project Moodboard" class="h-full object-cover row-span-2" />
+		<img src="c-cube/c-cube-project-moodboard-2.png" alt="C-Cube Project Moodboard" class="h-full w-full object-cover row-span-2 row-start-2" />
+		<img src="c-cube/c-cube-project-moodboard-4.png" alt="C-Cube Project Moodboard" class="h-full w-full object-cover row-span-2" />
 	</div>
-	<ProjectSection hasPaddingBottom={false}>
+	<ProjectSection>
 		<div class="text-block-icon">
 			<TextBlock header="Wireframes">
 				The process of crafting wireframes was akin to organizing a puzzle of simplicity and clarity. With a desire to ensure seamless user
