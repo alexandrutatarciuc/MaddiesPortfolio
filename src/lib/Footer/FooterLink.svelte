@@ -3,7 +3,7 @@
     export let link : string;
 </script>
 
-<a href="{link}"
+<a href="{link}" target="_blank"
 class="flex items-center gap-1">{text}
 <svg
     xmlns="http://www.w3.org/2000/svg"
