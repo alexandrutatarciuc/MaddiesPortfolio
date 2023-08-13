@@ -61,7 +61,7 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Mădălina Chelaru — UX/UI Designer</title>
 </svelte:head>
 
 <Nav {shouldTransition} />
@@ -170,7 +170,7 @@
 			tags="Concept Development | UX | App Design" />
 		<ProjectCard
 			imgUrl="/projects/my-coffee-impact/my-coffee-impact-project-cover-preview.png"
-			projectUrl="coffee-impact"
+			projectUrl="clever-coffee"
 			title="My Coffee Impact Platform"
 			tags="Gamification | Website Design" />
 	</div>

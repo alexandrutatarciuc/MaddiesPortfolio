@@ -18,8 +18,8 @@
 		Contact me at <a href="mailto:maddychelaru@gmail.com" class="inline">maddychelaru@gmail.com</a>
 	</p>
 	<div class="text-xl sm:text-2xl md:text-4xl flex flex-wrap font-normal items-center justify-center gap-x-20">
-		<FooterLink text="Instagram" link="/"></FooterLink>
-		<FooterLink text="LinkedIn" link="/"></FooterLink>
+		<FooterLink text="Instagram" link="https://instagram.com/madalinachelaruworks?igshid=MmIzYWVlNDQ5Yg=="></FooterLink>
+		<FooterLink text="LinkedIn" link="https://www.linkedin.com/in/madalinachelaru/"></FooterLink>
 	</div>
 </section>
 

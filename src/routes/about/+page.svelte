@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Mădălina Chelaru — CV</title>
+	<title>Mădălina Chelaru — About me</title>
 </svelte:head>
 
 <Nav shouldTransition={false}/>
