@@ -20,7 +20,7 @@
 </svelte:head>
 
 <div class="flex flex-col bg-white font-figtree text-4xl">
-	<ProjectCover src="c-cube/c-cube-project-cover.png" alt="C-Cube Project Cover" />
+	<ProjectCover src="c-cube/c-cube-project-cover.webp" alt="C-Cube Project Cover" />
 	<ProjectTitle title="C-Cube" subHeader="Giving voice and creating a platform for change." />
 	<ProjectOverview buttonLabel="See website" buttonHref="https://c-cube.webflow.io/">
 		<svelte:fragment slot="item">
