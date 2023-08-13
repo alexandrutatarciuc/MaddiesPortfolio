@@ -159,7 +159,7 @@
 	<h2 class="font-display text-4xl sm:text-6xl xl:text-[5.25rem] text-gray-900 mb-10 text-center font-semibold">Projects</h2>
 	<div class="grid grid-rows-3 auto-rows-min gap-16">
 		<ProjectCard
-			imgUrl="/projects/c-cube/c-cube-project-cover-preview.png"
+			imgUrl="/projects/c-cube/c-cube-project-cover.webp"
 			projectUrl="c-cube"
 			title="C-Cube"
 			tags="UX/UI | Branding | Web Development" />
