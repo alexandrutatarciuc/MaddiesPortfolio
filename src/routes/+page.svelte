@@ -7,24 +7,14 @@
 	import { fade, fly, scale } from 'svelte/transition';
 	import { inview } from 'svelte-inview';
 
-	function isFirstLoad(): boolean {
-		const key = 'hasLoadedBefore';
-		const hasLoadedBefore = sessionStorage.getItem(key);
-
-		if (hasLoadedBefore === null) {
-			sessionStorage.setItem(key, 'true');
-			return true;
-		}
-
-		return false;
-	}
+	import { isFirstLoad } from '$lib/Utilities/firstLoad';
 
 	let shouldTransition = false;
 	let isPageLoaded = false;
 
 	onMount(() => {
 		isPageLoaded = true;
-		shouldTransition = isFirstLoad();
+		shouldTransition = isFirstLoad('projects');
 	});
 
 	let globalDelay = 150;
