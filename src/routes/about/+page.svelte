@@ -26,15 +26,13 @@
 <Nav {shouldTransition} />
 <section class="flex items-center justify-center w-full min-h-screen px-6 py-24 overflow-hidden bg-white sm:px-8 md:px-15 lg:px-auto">
 	{#if isPageLoaded}
-		<!-- px-4 sm:px-8 md:px-10 lg:px-15 py-12 sm:py-19 -->
-		<div class="relative text-display overflow-hidden border-2 border-gray-900 rounded-2xl mx-auto flex flex-col gap-10 max-w-[70rem] hi-section">
-			<p class="text-xl md:text-2xl font-display font-500 p-6">
-				My purpose is to give voice to overlooked perspectives, fostering meaningful connections and inclusivity. I channel my skills to support those
-				with meaningful projects, ensuring their visions reach a wider audience.
+		<div class="relative text-display overflow-hidden border-2 border-gray-900 rounded-2xl mx-auto flex flex-col md:flex-row-reverse gap-10 max-w-[70rem] hi-section">
+			<p class="text-xl md:text-2xl font-display p-6 self-center">
+				I'm currently pursuing a Master's degree in Web Communication Design at SDU, where my primary focus lies in enhancing my expertise in front-end development and value-based design.  Additionally, I'm an active volunteer for C-cube, where I occasionally craft graphic content for social media.
 			</p>
-			<div class="relative bottom-0 left-0">
+			<div class="shrink-0 relative -bottom-24 md:-bottom-36 xl:-bottom-96 -left-10 md:-left-20 xl:-left-44 -mt-20 xl:-mt-64 md:-mr-20 xl:-mr-56 w-[22rem] md:w-[27rem] lg:w-[35rem] xl:w-[55rem] md:rotate-12 md:self-end">
 				<img src="about/maddie-image-background.png" alt="Maddie background outline" class="relative top-0 left-0" />
-				<img src="about/maddie-image.png" alt="Maddie" class="absolute top-3 left-0" />
+				<img src="about/maddie-image.png" alt="Maddie" class="absolute -top-3 xl:-top-2 left-0 xl:left-5 scale-90 xl:scale-95" />
 			</div>
 		</div>
 	{/if}
@@ -67,7 +65,6 @@
 		</div>
 	</div>
 </section>
-
 <h3 class="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-[6.25rem] py-10 md:py-20 text-center text-gray-900 font-display text-xl md:text-4xl">
 	Let's collaborate if you're committed to making<br /> the world a better place.
 </h3>
